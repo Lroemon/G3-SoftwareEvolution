@@ -1,0 +1,115 @@
+\documentclass[]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{eurosym}
+\usepackage[
+  margin=1.8cm,
+  includefoot,
+  footskip=10pt,
+]{geometry}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titling}
+\usepackage{subfig}
+\usepackage[bottom]{footmisc}
+\usepackage{titlesec}
+\usepackage{chngpage}
+\usepackage{calc}
+\usepackage{listings}
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+
+
+\setcounter{secnumdepth}{4}
+
+\newcommand{\minit}[1]{\noindent{\small\textbf{ \underline{#1}}}\vspace{0.2cm}}
+\newcommand{\todo}[1]{\par{\color{red} /---| A faire : #1 |---\textbackslash\\}}
+\newcommand{\wordlink}[2]{\hyperref[#1]{#2~\ref{#1}}}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%-- Logos PDG --
+\pretitle{
+\begin{center}
+
+\begin{figure}[!tbp]
+  \centering
+  \subfloat{\includegraphics[width=0.25\textwidth]{UMons_logo.png}}
+  \hfill
+  \subfloat{\includegraphics[width=0.25\textwidth]{sciences_logo.png}}\\
+\end{figure}
+~\newline
+
+}
+
+\posttitle{\end{center}}
+
+\begin{document}
+
+\title{
+\vspace{1.6cm}
+{\Huge Software Analysis : pacman systems}\\
+\vspace{0.5cm}
+{\Huge Project report for Software Evolution course}\vspace{1cm}\\
+}
+
+
+\author{
+\vspace{1cm}
+\huge{Group 3}\\
+\Large{BOOSKO Sam}\\
+\Large{DECOCQ Rémy}\\
+\Large{SCHERER Robin}
+}
+
+
+\date{
+\vspace{7.9cm}
+Academic Year 2019-2020\\
+Master Computers Science, block 2\\
+Faculté des Sciences, Université de Mons}
+
+\maketitle          
+
+\thispagestyle{empty}   
+
+\newpage
+
+\tableofcontents
+\newpage
+
+%------------- INTRO -------------
+\section*{Introduction}
+\newpage
+\section{Quality analysis of the initial versions}
+\newpage
+\section{Quality improvement}
+\newpage
+\section{Adding basic functionalities}
+\newpage
+\section{Adding new features}
+\newpage
+\section{Quality evolution analysis}
+\newpage
+\section{Conclusion}
+
+
+\end{document}

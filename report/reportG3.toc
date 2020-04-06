@@ -1,0 +1,7 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Quality analysis of the initial versions}{4}{section.1}%
+\contentsline {section}{\numberline {2}Quality improvement}{5}{section.2}%
+\contentsline {section}{\numberline {3}Adding basic functionalities}{6}{section.3}%
+\contentsline {section}{\numberline {4}Adding new features}{7}{section.4}%
+\contentsline {section}{\numberline {5}Quality evolution analysis}{8}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}%
