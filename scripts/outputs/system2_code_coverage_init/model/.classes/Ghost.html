@@ -1,0 +1,312 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Ghost</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Ghost (model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Ghost</td>
+<td class="coverageStat">
+  <span class="percent">
+    73.3%
+  </span>
+  <span class="absValue">
+    (11/ 15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (42/ 63)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Ghost$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Ghost$Colour</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    77.8%
+  </span>
+  <span class="absValue">
+    (14/ 18)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68.2%
+  </span>
+  <span class="absValue">
+    (45/ 66)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/******************************************************************************
+<i>2</i>&nbsp; * This work is applicable to the conditions of the MIT License,              *
+<i>3</i>&nbsp; * which can be found in the LICENSE file, or at                              *
+<i>4</i>&nbsp; * https://github.com/philippwinter/pacman/blob/master/LICENSE                *
+<i>5</i>&nbsp; *                                                                            *
+<i>6</i>&nbsp; * Copyright (c) 2013 Philipp Winter, Jonas Heidecke &amp; Niklas Kaddatz         *
+<i>7</i>&nbsp; ******************************************************************************/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package model;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * Ghosts are the little beasts {@link Pacman} can hunt after eating a {@link Coin}.
+<i>13</i>&nbsp; *
+<i>14</i>&nbsp; * @author Philipp Winter
+<i>15</i>&nbsp; * @author Jonas Heidecke
+<i>16</i>&nbsp; * @author Niklas Kaddatz
+<i>17</i>&nbsp; */
+<i>18</i>&nbsp;public class Ghost extends DynamicTarget implements Scorable {
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    /**
+<i>21</i>&nbsp;     * The current colour of this ghost.
+<i>22</i>&nbsp;     */
+<i>23</i>&nbsp;    private Colour colour;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    /**
+<i>26</i>&nbsp;     * The name of the ghost.
+<i>27</i>&nbsp;     */
+<i>28</i>&nbsp;    private String name;
+<i>29</i>&nbsp;
+<b class="fc"><i>30</i>&nbsp;    private double waitingSeconds = -1;</b>
+<i>31</i>&nbsp;
+<b class="fc"><i>32</i>&nbsp;    private double speed = 1;</b>
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;    private boolean movedInLastTurn = false;</b>
+<i>35</i>&nbsp;
+<b class="fc"><i>36</i>&nbsp;    public Ghost(Position pos, Colour colour) {</b>
+<b class="fc"><i>37</i>&nbsp;        this.colour = colour;</b>
+<b class="fc"><i>38</i>&nbsp;        switch (colour) {</b>
+<i>39</i>&nbsp;            case RED:
+<b class="fc"><i>40</i>&nbsp;                this.setName(&quot;Blinky&quot;);</b>
+<b class="fc"><i>41</i>&nbsp;                break;</b>
+<i>42</i>&nbsp;            case ORANGE:
+<b class="fc"><i>43</i>&nbsp;                this.setName(&quot;Clyde&quot;);</b>
+<b class="fc"><i>44</i>&nbsp;                break;</b>
+<i>45</i>&nbsp;            case BLUE:
+<b class="fc"><i>46</i>&nbsp;                this.setName(&quot;Inky&quot;);</b>
+<b class="fc"><i>47</i>&nbsp;                break;</b>
+<i>48</i>&nbsp;            case PINK:
+<b class="fc"><i>49</i>&nbsp;                this.setName(&quot;Pinky&quot;);</b>
+<b class="fc"><i>50</i>&nbsp;                break;</b>
+<i>51</i>&nbsp;            default:
+<b class="nc"><i>52</i>&nbsp;                throw new IllegalArgumentException(&quot;You cannot construct a ghost with the colour &quot; + colour);</b>
+<i>53</i>&nbsp;        }
+<b class="fc"><i>54</i>&nbsp;        this.setName(name);</b>
+<b class="fc"><i>55</i>&nbsp;        this.state = State.HUNTER;</b>
+<b class="fc"><i>56</i>&nbsp;        this.setPosition(pos);</b>
+<b class="fc"><i>57</i>&nbsp;    }</b>
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    /**
+<i>60</i>&nbsp;     * Gets the current colour of the ghost.
+<i>61</i>&nbsp;     *
+<i>62</i>&nbsp;     * @return The colour.
+<i>63</i>&nbsp;     */
+<i>64</i>&nbsp;    public Colour getColour() {
+<b class="fc"><i>65</i>&nbsp;        return colour;</b>
+<i>66</i>&nbsp;    }
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    /**
+<i>69</i>&nbsp;     * Sets the colour of the ghost.
+<i>70</i>&nbsp;     *
+<i>71</i>&nbsp;     * @param colour The new colour.
+<i>72</i>&nbsp;     */
+<i>73</i>&nbsp;    public void setColour(Colour colour) {
+<b class="fc"><i>74</i>&nbsp;        this.colour = colour;</b>
+<b class="fc"><i>75</i>&nbsp;    }</b>
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;    /**
+<i>78</i>&nbsp;     * Gets the name of the ghost.
+<i>79</i>&nbsp;     *
+<i>80</i>&nbsp;     * @return The name.
+<i>81</i>&nbsp;     */
+<i>82</i>&nbsp;    public String getName() {
+<b class="fc"><i>83</i>&nbsp;        return name;</b>
+<i>84</i>&nbsp;    }
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;    /**
+<i>87</i>&nbsp;     * Sets a new name of the ghost.
+<i>88</i>&nbsp;     *
+<i>89</i>&nbsp;     * @param name The new name.
+<i>90</i>&nbsp;     */
+<i>91</i>&nbsp;    public void setName(String name) {
+<b class="fc"><i>92</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>93</i>&nbsp;    }</b>
+<i>94</i>&nbsp;
+<i>95</i>&nbsp;    /**
+<i>96</i>&nbsp;     * Let the object eat a subclass of Target.
+<i>97</i>&nbsp;     *
+<i>98</i>&nbsp;     * @param target The object to be eaten.
+<i>99</i>&nbsp;     */
+<i>100</i>&nbsp;    public void eat(Target target) {
+<b class="fc"><i>101</i>&nbsp;        if (target instanceof Pacman) {</b>
+<b class="fc"><i>102</i>&nbsp;            ((Pacman) target).changeState(State.MUNCHED);</b>
+<i>103</i>&nbsp;        }
+<b class="fc"><i>104</i>&nbsp;    }</b>
+<i>105</i>&nbsp;
+<i>106</i>&nbsp;    /**
+<i>107</i>&nbsp;     * Changes the state of the ghost and performs needed operations.
+<i>108</i>&nbsp;     *
+<i>109</i>&nbsp;     * @param state The new state.
+<i>110</i>&nbsp;     */
+<i>111</i>&nbsp;    public void changeState(State state) {
+<b class="nc"><i>112</i>&nbsp;        if (state == State.WAITING) {</b>
+<b class="nc"><i>113</i>&nbsp;            this.speed *= 0.5;</b>
+<b class="nc"><i>114</i>&nbsp;            if(this.waitingSeconds == 0){</b>
+<b class="nc"><i>115</i>&nbsp;                this.waitingSeconds = 4.;</b>
+<i>116</i>&nbsp;            } else {
+<b class="nc"><i>117</i>&nbsp;                this.waitingSeconds += 4.;</b>
+<i>118</i>&nbsp;            }
+<b class="nc"><i>119</i>&nbsp;        } else if (state == State.HUNTER) {</b>
+<b class="nc"><i>120</i>&nbsp;            this.speed *= 2;</b>
+<b class="nc"><i>121</i>&nbsp;            this.waitingSeconds = -1.;</b>
+<i>122</i>&nbsp;        }
+<b class="nc"><i>123</i>&nbsp;        this.state = state;</b>
+<b class="nc"><i>124</i>&nbsp;    }</b>
+<i>125</i>&nbsp;
+<i>126</i>&nbsp;    public double getWaitingSeconds() {
+<b class="fc"><i>127</i>&nbsp;        return waitingSeconds;</b>
+<i>128</i>&nbsp;    }
+<i>129</i>&nbsp;
+<i>130</i>&nbsp;    public boolean getMovedInLastTurn() {
+<b class="fc"><i>131</i>&nbsp;        return movedInLastTurn;</b>
+<i>132</i>&nbsp;    }
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;    public void setMovedInLastTurn(boolean b) {
+<b class="nc"><i>135</i>&nbsp;        this.movedInLastTurn = b;</b>
+<b class="nc"><i>136</i>&nbsp;    }</b>
+<i>137</i>&nbsp;
+<i>138</i>&nbsp;    @Override
+<i>139</i>&nbsp;    public int getScore() {
+<b class="fc"><i>140</i>&nbsp;        return 200;</b>
+<i>141</i>&nbsp;    }
+<i>142</i>&nbsp;
+<i>143</i>&nbsp;    @Override
+<i>144</i>&nbsp;    public void gotEaten() {
+<b class="nc"><i>145</i>&nbsp;        this.changeState(State.MUNCHED);</b>
+<b class="nc"><i>146</i>&nbsp;    }</b>
+<i>147</i>&nbsp;
+<i>148</i>&nbsp;    public void reduceWaitingSeconds(double amount) {
+<b class="nc"><i>149</i>&nbsp;        if (amount &lt;= 0) {</b>
+<b class="nc"><i>150</i>&nbsp;            throw new IllegalArgumentException(&quot;The amount has to be positive&quot;);</b>
+<i>151</i>&nbsp;        } else {
+<b class="nc"><i>152</i>&nbsp;            this.waitingSeconds -= amount;</b>
+<b class="nc"><i>153</i>&nbsp;            if(this.waitingSeconds &lt; 0) {</b>
+<b class="nc"><i>154</i>&nbsp;                this.waitingSeconds = 0;</b>
+<i>155</i>&nbsp;            }
+<i>156</i>&nbsp;        }
+<b class="nc"><i>157</i>&nbsp;    }</b>
+<i>158</i>&nbsp;
+<i>159</i>&nbsp;    public boolean equals(Object o) {
+<b class="fc"><i>160</i>&nbsp;        if (o != null) {</b>
+<b class="fc"><i>161</i>&nbsp;            if (o instanceof Ghost) {</b>
+<b class="fc"><i>162</i>&nbsp;                Ghost g = (Ghost) o;</b>
+<b class="fc"><i>163</i>&nbsp;                return this.getWaitingSeconds() == g.getWaitingSeconds()</b>
+<b class="fc"><i>164</i>&nbsp;                        &amp;&amp; this.getPosition().equals(g.getPosition())</b>
+<b class="fc"><i>165</i>&nbsp;                        &amp;&amp; this.getState().equals(g.getState())</b>
+<b class="fc"><i>166</i>&nbsp;                        &amp;&amp; this.getMovedInLastTurn() == (g.getMovedInLastTurn())</b>
+<b class="fc"><i>167</i>&nbsp;                        &amp;&amp; this.getColour().equals(g.getColour())</b>
+<b class="fc"><i>168</i>&nbsp;                        &amp;&amp; this.getName().equals(g.getName())</b>
+<b class="fc"><i>169</i>&nbsp;                        &amp;&amp; this.getHeadingTo().equals(g.getHeadingTo());</b>
+<i>170</i>&nbsp;            }
+<i>171</i>&nbsp;        }
+<b class="fc"><i>172</i>&nbsp;        return false;</b>
+<i>173</i>&nbsp;    }
+<i>174</i>&nbsp;
+<b class="fc"><i>175</i>&nbsp;    public enum Colour {</b>
+<i>176</i>&nbsp;
+<b class="fc"><i>177</i>&nbsp;        RED, PINK, BLUE, ORANGE</b>
+<i>178</i>&nbsp;
+<i>179</i>&nbsp;    }
+<i>180</i>&nbsp;
+<i>181</i>&nbsp;    public String toString() {
+<b class="fc"><i>182</i>&nbsp;        return &quot;Ghost [&quot; + position + &quot;, &quot; + state + &quot;, &quot; + colour + &quot;, visible: &quot; + visible + &quot;]&quot;;</b>
+<i>183</i>&nbsp;    }
+<i>184</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-13 18:57</div>
+</div>
+</body>
+</html>

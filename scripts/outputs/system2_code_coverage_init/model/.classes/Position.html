@@ -1,0 +1,175 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Position</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Position (model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Position</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.9%
+  </span>
+  <span class="absValue">
+    (10/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    77.4%
+  </span>
+  <span class="absValue">
+    (24/ 31)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/******************************************************************************
+<i>2</i>&nbsp; * This work is applicable to the conditions of the MIT License,              *
+<i>3</i>&nbsp; * which can be found in the LICENSE file, or at                              *
+<i>4</i>&nbsp; * https://github.com/philippwinter/pacman/blob/master/LICENSE                *
+<i>5</i>&nbsp; *                                                                            *
+<i>6</i>&nbsp; * Copyright (c) 2013 Philipp Winter, Jonas Heidecke &amp; Niklas Kaddatz         *
+<i>7</i>&nbsp; ******************************************************************************/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package model;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * The position class represents a point on the map. IT SHOULD NOT BE CONSTRUCTED OUTSIDE THE {@link Map} CLASS.
+<i>13</i>&nbsp; *
+<i>14</i>&nbsp; * @author Philipp Winter
+<i>15</i>&nbsp; * @author Jonas Heidecke
+<i>16</i>&nbsp; * @author Niklas Kaddatz
+<i>17</i>&nbsp; */
+<b class="fc"><i>18</i>&nbsp;public class Position {</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    private final int x;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    private final int y;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    private MapObjectContainer onPosition;
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;    public Position(int x, int y) {</b>
+<b class="fc"><i>27</i>&nbsp;        this.x = x;</b>
+<b class="fc"><i>28</i>&nbsp;        this.y = y;</b>
+<b class="fc"><i>29</i>&nbsp;        this.onPosition = new MapObjectContainer();</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    public int getX() {
+<b class="fc"><i>33</i>&nbsp;        return x;</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public int getY() {
+<b class="fc"><i>37</i>&nbsp;        return y;</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    public MapObjectContainer getOnPosition() {
+<b class="fc"><i>41</i>&nbsp;        return onPosition;</b>
+<i>42</i>&nbsp;    }
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    @SuppressWarnings(&quot;unused&quot;)
+<i>45</i>&nbsp;    public void add(MapObject mapObject) {
+<b class="fc"><i>46</i>&nbsp;        assert mapObject.getPosition() != null;</b>
+<b class="fc"><i>47</i>&nbsp;        this.onPosition.add(mapObject);</b>
+<b class="fc"><i>48</i>&nbsp;    }</b>
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    @SuppressWarnings(&quot;unused&quot;)
+<i>51</i>&nbsp;    public void remove(MapObject mapObject) {
+<b class="fc"><i>52</i>&nbsp;        this.onPosition.remove(mapObject);</b>
+<b class="fc"><i>53</i>&nbsp;    }</b>
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    public boolean isMoveableTo() {
+<b class="fc"><i>56</i>&nbsp;        for (MapObject mO : this.onPosition) {</b>
+<b class="fc"><i>57</i>&nbsp;            if (mO instanceof Wall) {</b>
+<b class="nc"><i>58</i>&nbsp;                return false;</b>
+<i>59</i>&nbsp;            }
+<b class="fc"><i>60</i>&nbsp;        }</b>
+<b class="fc"><i>61</i>&nbsp;        return true;</b>
+<i>62</i>&nbsp;    }
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;    public double calcDistance(Position pos) {
+<b class="nc"><i>65</i>&nbsp;        if (pos == null) {</b>
+<b class="nc"><i>66</i>&nbsp;            throw new IllegalArgumentException(&quot;Position cannot be null&quot;);</b>
+<i>67</i>&nbsp;        }
+<i>68</i>&nbsp;        // A little bit of math, using Pythagoras&#39; Theorem
+<b class="nc"><i>69</i>&nbsp;        return Math.sqrt(</b>
+<b class="nc"><i>70</i>&nbsp;                Math.pow(this.getX() - pos.getX(), 2) +</b>
+<b class="nc"><i>71</i>&nbsp;                        Math.pow(this.getY() - pos.getY(), 2)</b>
+<i>72</i>&nbsp;        );
+<i>73</i>&nbsp;    }
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    @Override
+<i>76</i>&nbsp;    public boolean equals(Object obj) {
+<b class="fc"><i>77</i>&nbsp;        if (obj != null) {</b>
+<b class="fc"><i>78</i>&nbsp;            if (obj instanceof Position) {</b>
+<b class="fc"><i>79</i>&nbsp;                Position p = (Position) obj;</b>
+<b class="fc"><i>80</i>&nbsp;                return p.getX() == this.getX()</b>
+<b class="fc"><i>81</i>&nbsp;                        &amp;&amp; p.getY() == this.getY();</b>
+<i>82</i>&nbsp;            }
+<i>83</i>&nbsp;        }
+<i>84</i>&nbsp;
+<b class="nc"><i>85</i>&nbsp;        return false;</b>
+<i>86</i>&nbsp;    }
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;    public String toString() {
+<b class="fc"><i>89</i>&nbsp;        return x + &quot;|&quot; + y;</b>
+<i>90</i>&nbsp;    }
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-13 18:57</div>
+</div>
+</body>
+</html>

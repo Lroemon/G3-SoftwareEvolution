@@ -1,0 +1,120 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Container</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Container (model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">Container</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/******************************************************************************
+<i>2</i>&nbsp; * This work is applicable to the conditions of the MIT License,              *
+<i>3</i>&nbsp; * which can be found in the LICENSE file, or at                              *
+<i>4</i>&nbsp; * https://github.com/philippwinter/pacman/blob/master/LICENSE                *
+<i>5</i>&nbsp; *                                                                            *
+<i>6</i>&nbsp; * Copyright (c) 2013 Philipp Winter, Jonas Heidecke &amp; Niklas Kaddatz         *
+<i>7</i>&nbsp; ******************************************************************************/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package model;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import java.util.Vector;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;/**
+<i>14</i>&nbsp; * The basic Container interface.
+<i>15</i>&nbsp; *
+<i>16</i>&nbsp; * @author Philipp Winter
+<i>17</i>&nbsp; * @author Jonas Heidecke
+<i>18</i>&nbsp; * @author Niklas Kaddatz
+<i>19</i>&nbsp; */
+<i>20</i>&nbsp;@SuppressWarnings(&quot;unused&quot;)
+<i>21</i>&nbsp;public interface Container&lt;E&gt; extends Iterable&lt;E&gt; {
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    /**
+<i>24</i>&nbsp;     * The per index getter.
+<i>25</i>&nbsp;     *
+<i>26</i>&nbsp;     * @param i The index of the element.
+<i>27</i>&nbsp;     *
+<i>28</i>&nbsp;     * @return Element on index i.
+<i>29</i>&nbsp;     */
+<i>30</i>&nbsp;    public E get(int i);
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    /**
+<i>33</i>&nbsp;     * Adds an element to the container.
+<i>34</i>&nbsp;     *
+<i>35</i>&nbsp;     * @param el The element to add.
+<i>36</i>&nbsp;     *
+<i>37</i>&nbsp;     * @throws model.exception.ListException                Parent class of all following exceptions.
+<i>38</i>&nbsp;     * @throws model.exception.ObjectAlreadyInListException When the object &lt;i&gt;el&lt;/i&gt; is already in the list.
+<i>39</i>&nbsp;     * @throws model.exception.ListFullException            When the list is already filled with the maximum amount of elements.
+<i>40</i>&nbsp;     */
+<i>41</i>&nbsp;    public void add(E el);
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    /**
+<i>44</i>&nbsp;     * Adds the elements of another container of the same type.
+<i>45</i>&nbsp;     *
+<i>46</i>&nbsp;     * @param container The other container.
+<i>47</i>&nbsp;     */
+<i>48</i>&nbsp;    public void add(Container&lt;E&gt; container);
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    /**
+<i>51</i>&nbsp;     * Returns an ArrayList instance with all elements.
+<i>52</i>&nbsp;     *
+<i>53</i>&nbsp;     * @return A clone of the internal used ArrayList, so it can be mutated securely.
+<i>54</i>&nbsp;     * @see java.util.Vector#clone()
+<i>55</i>&nbsp;     */
+<i>56</i>&nbsp;    public Vector&lt;E&gt; getAll();
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    /**
+<i>59</i>&nbsp;     * Removes an element from the container.
+<i>60</i>&nbsp;     *
+<i>61</i>&nbsp;     * @param el The element to remove.
+<i>62</i>&nbsp;     */
+<i>63</i>&nbsp;    public void remove(E el);
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    /**
+<i>66</i>&nbsp;     * Returns whether an object is in the container (compares by the .equals() method, so be sure to implement it!).
+<i>67</i>&nbsp;     *
+<i>68</i>&nbsp;     * @param o The object to check again.
+<i>69</i>&nbsp;     *
+<i>70</i>&nbsp;     * @return Whether &lt;i&gt;o&lt;/i&gt; is contained in this container.
+<i>71</i>&nbsp;     */
+<i>72</i>&nbsp;    public boolean contains(E o);
+<i>73</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-13 18:57</div>
+</div>
+</body>
+</html>

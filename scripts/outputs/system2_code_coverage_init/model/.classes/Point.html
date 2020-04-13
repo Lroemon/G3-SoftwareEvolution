@@ -1,0 +1,136 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Point</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Point (model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Point</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    20%
+  </span>
+  <span class="absValue">
+    (1/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    22.2%
+  </span>
+  <span class="absValue">
+    (4/ 18)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/******************************************************************************
+<i>2</i>&nbsp; * This work is applicable to the conditions of the MIT License,              *
+<i>3</i>&nbsp; * which can be found in the LICENSE file, or at                              *
+<i>4</i>&nbsp; * https://github.com/philippwinter/pacman/blob/master/LICENSE                *
+<i>5</i>&nbsp; *                                                                            *
+<i>6</i>&nbsp; * Copyright (c) 2013 Philipp Winter, Jonas Heidecke &amp; Niklas Kaddatz         *
+<i>7</i>&nbsp; ******************************************************************************/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package model;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * @author Philipp Winter
+<i>13</i>&nbsp; * @author Jonas Heidecke
+<i>14</i>&nbsp; * @author Niklas Kaddatz
+<i>15</i>&nbsp; */
+<i>16</i>&nbsp;public class Point extends StaticTarget implements Scorable {
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;    public Point(Position pos) {</b>
+<b class="fc"><i>19</i>&nbsp;        this.state = State.AVAILABLE;</b>
+<b class="fc"><i>20</i>&nbsp;        this.setPosition(pos);</b>
+<b class="fc"><i>21</i>&nbsp;    }</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    @Override
+<i>24</i>&nbsp;    public void changeState(State s) {
+<b class="nc"><i>25</i>&nbsp;        if (s == null) {</b>
+<b class="nc"><i>26</i>&nbsp;            throw new IllegalArgumentException(&quot;A null state is not allowed.&quot;);</b>
+<b class="nc"><i>27</i>&nbsp;        } else if (state == s) {</b>
+<b class="nc"><i>28</i>&nbsp;            throw new IllegalArgumentException(&quot;The new state must differ from the old one.&quot;);</b>
+<i>29</i>&nbsp;        }
+<i>30</i>&nbsp;
+<b class="nc"><i>31</i>&nbsp;        if (s == State.EATEN) {</b>
+<b class="nc"><i>32</i>&nbsp;            setVisible(false);</b>
+<b class="nc"><i>33</i>&nbsp;        } else if (s == State.AVAILABLE) {</b>
+<b class="nc"><i>34</i>&nbsp;            setVisible(true);</b>
+<i>35</i>&nbsp;        }
+<i>36</i>&nbsp;
+<b class="nc"><i>37</i>&nbsp;        this.state = s;</b>
+<b class="nc"><i>38</i>&nbsp;    }</b>
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    @Override
+<i>41</i>&nbsp;    public int getScore() {
+<b class="nc"><i>42</i>&nbsp;        return 10;</b>
+<i>43</i>&nbsp;    }
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    @Override
+<i>46</i>&nbsp;    public void gotEaten() {
+<b class="nc"><i>47</i>&nbsp;        this.changeState(State.EATEN);</b>
+<b class="nc"><i>48</i>&nbsp;    }</b>
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    public String toString() {
+<b class="nc"><i>51</i>&nbsp;        return &quot;Point [&quot; + position + &quot;, &quot; + state + &quot;, visible: &quot; + visible + &quot;]&quot;;</b>
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-13 18:57</div>
+</div>
+</body>
+</html>

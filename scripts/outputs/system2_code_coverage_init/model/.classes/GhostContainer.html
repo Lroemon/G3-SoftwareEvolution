@@ -1,0 +1,241 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GhostContainer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GhostContainer (model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GhostContainer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81.8%
+  </span>
+  <span class="absValue">
+    (9/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    78.1%
+  </span>
+  <span class="absValue">
+    (25/ 32)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/******************************************************************************
+<i>2</i>&nbsp; * This work is applicable to the conditions of the MIT License,              *
+<i>3</i>&nbsp; * which can be found in the LICENSE file, or at                              *
+<i>4</i>&nbsp; * https://github.com/philippwinter/pacman/blob/master/LICENSE                *
+<i>5</i>&nbsp; *                                                                            *
+<i>6</i>&nbsp; * Copyright (c) 2013 Philipp Winter, Jonas Heidecke &amp; Niklas Kaddatz         *
+<i>7</i>&nbsp; ******************************************************************************/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package model;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import model.exception.ListFullException;
+<i>12</i>&nbsp;import model.exception.ObjectAlreadyInListException;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;import java.util.Vector;
+<i>15</i>&nbsp;import java.util.Iterator;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;/**
+<i>18</i>&nbsp; * A container of {@link Ghost}&#39;s.
+<i>19</i>&nbsp; *
+<i>20</i>&nbsp; * @author Philipp Winter
+<i>21</i>&nbsp; * @author Jonas Heidecke
+<i>22</i>&nbsp; * @author Niklas Kaddatz
+<i>23</i>&nbsp; */
+<i>24</i>&nbsp;public class GhostContainer implements Container&lt;Ghost&gt; {
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    /**
+<i>27</i>&nbsp;     * The ghosts.
+<i>28</i>&nbsp;     */
+<i>29</i>&nbsp;    private Vector&lt;Ghost&gt; ghosts;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    /**
+<i>32</i>&nbsp;     * The maximal amount of ghosts.
+<i>33</i>&nbsp;     */
+<b class="fc"><i>34</i>&nbsp;    public final int max = 4;</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    /**
+<i>37</i>&nbsp;     * Constructs a new GhostContainer.
+<i>38</i>&nbsp;     */
+<b class="fc"><i>39</i>&nbsp;    public GhostContainer() {</b>
+<b class="fc"><i>40</i>&nbsp;        this.ghosts = new Vector&lt;&gt;(max);</b>
+<b class="fc"><i>41</i>&nbsp;    }</b>
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    /**
+<i>44</i>&nbsp;     * Adds a ghost to the List.
+<i>45</i>&nbsp;     *
+<i>46</i>&nbsp;     * @param ghost The ghost to add.
+<i>47</i>&nbsp;     *
+<i>48</i>&nbsp;     * @throws model.exception.ListFullException            When the list is already filled with {@link #max} ghosts.
+<i>49</i>&nbsp;     * @throws model.exception.ObjectAlreadyInListException When the submitted ghost is already in the list.
+<i>50</i>&nbsp;     */
+<i>51</i>&nbsp;    public void add(Ghost ghost) {
+<b class="fc"><i>52</i>&nbsp;        if (!this.ghosts.contains(ghost)) {</b>
+<b class="fc"><i>53</i>&nbsp;            if (this.ghosts.size() &lt; this.max) {</b>
+<b class="fc"><i>54</i>&nbsp;                this.ghosts.add(ghost);</b>
+<i>55</i>&nbsp;            } else {
+<b class="nc"><i>56</i>&nbsp;                throw new ListFullException(ghost.getClass().getCanonicalName());</b>
+<i>57</i>&nbsp;            }
+<i>58</i>&nbsp;        } else {
+<b class="fc"><i>59</i>&nbsp;            throw new ObjectAlreadyInListException(ghost.getClass().getCanonicalName());</b>
+<i>60</i>&nbsp;        }
+<b class="fc"><i>61</i>&nbsp;    }</b>
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    /**
+<i>64</i>&nbsp;     * Adds the elements of another container of the same type.
+<i>65</i>&nbsp;     *
+<i>66</i>&nbsp;     * @param container The other container.
+<i>67</i>&nbsp;     */
+<i>68</i>&nbsp;    @Override
+<i>69</i>&nbsp;    public void add(Container&lt;Ghost&gt; container) {
+<b class="nc"><i>70</i>&nbsp;        for (Ghost g : container) {</b>
+<b class="nc"><i>71</i>&nbsp;            this.add(g);</b>
+<b class="nc"><i>72</i>&nbsp;        }</b>
+<b class="nc"><i>73</i>&nbsp;    }</b>
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    /**
+<i>76</i>&nbsp;     * Gets a ghost per index.
+<i>77</i>&nbsp;     *
+<i>78</i>&nbsp;     * @param i The index of the element.
+<i>79</i>&nbsp;     *
+<i>80</i>&nbsp;     * @return The ghost at position &lt;i&gt;i&lt;/i&gt;.
+<i>81</i>&nbsp;     */
+<i>82</i>&nbsp;    public Ghost get(int i) {
+<b class="fc"><i>83</i>&nbsp;        return this.ghosts.get(i);</b>
+<i>84</i>&nbsp;    }
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;    /**
+<i>87</i>&nbsp;     * Gets all ghosts on the submitted position.
+<i>88</i>&nbsp;     *
+<i>89</i>&nbsp;     * @param pos The position to look for.
+<i>90</i>&nbsp;     *
+<i>91</i>&nbsp;     * @return All ghosts on &lt;i&gt;pos&lt;/i&gt;.
+<i>92</i>&nbsp;     */
+<i>93</i>&nbsp;    public Vector&lt;Ghost&gt; get(Position pos) {
+<b class="fc"><i>94</i>&nbsp;        Vector&lt;Ghost&gt; onPosition = new Vector&lt;&gt;();</b>
+<b class="fc"><i>95</i>&nbsp;        for (Ghost g : this.ghosts) {</b>
+<b class="fc"><i>96</i>&nbsp;            if (g.isOnPosition(pos)) {</b>
+<b class="fc"><i>97</i>&nbsp;                onPosition.add(g);</b>
+<i>98</i>&nbsp;            }
+<b class="fc"><i>99</i>&nbsp;        }</b>
+<i>100</i>&nbsp;
+<b class="fc"><i>101</i>&nbsp;        return onPosition;</b>
+<i>102</i>&nbsp;    }
+<i>103</i>&nbsp;
+<i>104</i>&nbsp;    /**
+<i>105</i>&nbsp;     * Returns an Vector instance with all elements.
+<i>106</i>&nbsp;     *
+<i>107</i>&nbsp;     * @return A clone of the internal used Vector, so it can be mutated securely.
+<i>108</i>&nbsp;     * @see java.util.Vector#clone()
+<i>109</i>&nbsp;     */
+<i>110</i>&nbsp;    @SuppressWarnings(&quot;unchecked&quot;)
+<i>111</i>&nbsp;    public Vector&lt;Ghost&gt; getAll() {
+<b class="fc"><i>112</i>&nbsp;        return (Vector&lt;Ghost&gt;) this.ghosts.clone();</b>
+<i>113</i>&nbsp;    }
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;    /**
+<i>116</i>&nbsp;     * Removes an element from the container.
+<i>117</i>&nbsp;     *
+<i>118</i>&nbsp;     * @param el The element to remove.
+<i>119</i>&nbsp;     */
+<i>120</i>&nbsp;    @Override
+<i>121</i>&nbsp;    public void remove(Ghost el) {
+<b class="fc"><i>122</i>&nbsp;        this.ghosts.remove(el);</b>
+<b class="fc"><i>123</i>&nbsp;    }</b>
+<i>124</i>&nbsp;
+<i>125</i>&nbsp;    /**
+<i>126</i>&nbsp;     * Gets the maximal amount of ghosts, fitting in this container.
+<i>127</i>&nbsp;     *
+<i>128</i>&nbsp;     * @return The {@link #max}imum.
+<i>129</i>&nbsp;     */
+<i>130</i>&nbsp;    public int getMax() {
+<b class="fc"><i>131</i>&nbsp;        return max;</b>
+<i>132</i>&nbsp;    }
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;    /**
+<i>135</i>&nbsp;     * Gets the iterator over all ghosts.
+<i>136</i>&nbsp;     *
+<i>137</i>&nbsp;     * @return An iterator over all elements in this container.
+<i>138</i>&nbsp;     * @see java.util.Vector#iterator()
+<i>139</i>&nbsp;     */
+<i>140</i>&nbsp;    public Iterator&lt;Ghost&gt; iterator() {
+<b class="fc"><i>141</i>&nbsp;        return ghosts.iterator();</b>
+<i>142</i>&nbsp;    }
+<i>143</i>&nbsp;
+<i>144</i>&nbsp;    public boolean equals(Object o) {
+<b class="fc"><i>145</i>&nbsp;        if (o != null) {</b>
+<b class="fc"><i>146</i>&nbsp;            if (o instanceof GhostContainer) {</b>
+<b class="fc"><i>147</i>&nbsp;                return this.getAll().equals(((GhostContainer) o).getAll())</b>
+<b class="fc"><i>148</i>&nbsp;                        &amp;&amp; this.getMax() == ((GhostContainer) o).getMax();</b>
+<i>149</i>&nbsp;            }
+<i>150</i>&nbsp;        }
+<b class="nc"><i>151</i>&nbsp;        return false;</b>
+<i>152</i>&nbsp;    }
+<i>153</i>&nbsp;
+<i>154</i>&nbsp;    public boolean contains(Ghost g) {
+<b class="nc"><i>155</i>&nbsp;        return this.ghosts.contains(g);</b>
+<i>156</i>&nbsp;    }
+<i>157</i>&nbsp;
+<i>158</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-13 18:57</div>
+</div>
+</body>
+</html>

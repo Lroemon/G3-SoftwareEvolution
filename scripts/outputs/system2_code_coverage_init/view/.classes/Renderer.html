@@ -1,0 +1,167 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Renderer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Renderer (view)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Renderer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.9%
+  </span>
+  <span class="absValue">
+    (26/ 28)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/******************************************************************************
+<i>2</i>&nbsp; * This work is applicable to the conditions of the MIT License,              *
+<i>3</i>&nbsp; * which can be found in the LICENSE file, or at                              *
+<i>4</i>&nbsp; * https://github.com/philippwinter/pacman/blob/master/LICENSE                *
+<i>5</i>&nbsp; *                                                                            *
+<i>6</i>&nbsp; * Copyright (c) 2013 Philipp Winter, Jonas Heidecke &amp; Niklas Kaddatz         *
+<i>7</i>&nbsp; ******************************************************************************/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package view;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import controller.MainController;
+<i>12</i>&nbsp;import model.*;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;import javax.swing.*;
+<i>15</i>&nbsp;import java.awt.*;
+<i>16</i>&nbsp;import java.awt.image.BufferedImage;
+<i>17</i>&nbsp;import java.util.Vector;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;/**
+<i>20</i>&nbsp; * Renderer
+<i>21</i>&nbsp; *
+<i>22</i>&nbsp; * @author Philipp Winter
+<i>23</i>&nbsp; */
+<i>24</i>&nbsp;public class Renderer {
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;    private boolean readyForReRendering = false;</b>
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    private final MainController controller;
+<i>29</i>&nbsp;    private final MainGui gui;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    public final int mapHeight;
+<i>32</i>&nbsp;    public final int mapWidth;
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    public final int topSpace;
+<i>35</i>&nbsp;    public final int leftSpace;
+<i>36</i>&nbsp;
+<b class="fc"><i>37</i>&nbsp;    public final int multiplier = 20;</b>
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    private final ImageOrganizer imgOrganizer;
+<i>40</i>&nbsp;
+<b class="fc"><i>41</i>&nbsp;    public Renderer(MainGui gui) {</b>
+<b class="fc"><i>42</i>&nbsp;        this.controller = MainController.getInstance();</b>
+<b class="fc"><i>43</i>&nbsp;        this.imgOrganizer = ImageOrganizer.getInstance();</b>
+<b class="fc"><i>44</i>&nbsp;        this.gui = gui;</b>
+<i>45</i>&nbsp;
+<b class="fc"><i>46</i>&nbsp;        this.mapHeight = (Map.getInstance().height * multiplier);</b>
+<b class="fc"><i>47</i>&nbsp;        this.mapWidth = (Map.getInstance().width * multiplier);</b>
+<i>48</i>&nbsp;
+<b class="fc"><i>49</i>&nbsp;        this.topSpace = (mapHeight / 2);</b>
+<b class="fc"><i>50</i>&nbsp;        this.leftSpace = (mapWidth / 4);</b>
+<b class="fc"><i>51</i>&nbsp;    }</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    private void render() {
+<b class="fc"><i>54</i>&nbsp;        if (!controller.isGameActive() || !readyForReRendering) {</b>
+<b class="fc"><i>55</i>&nbsp;            System.out.println(&quot;Returned without rendering: &quot; + System.currentTimeMillis());</b>
+<b class="fc"><i>56</i>&nbsp;            return;</b>
+<i>57</i>&nbsp;        }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;        try {
+<b class="fc"><i>60</i>&nbsp;            gui.getPnlGame().repaint();</b>
+<b class="nc"><i>61</i>&nbsp;        } catch (Throwable e) {</b>
+<b class="nc"><i>62</i>&nbsp;            e.printStackTrace();</b>
+<i>63</i>&nbsp;        } finally {
+<b class="fc"><i>64</i>&nbsp;            this.readyForReRendering = false;</b>
+<b class="fc"><i>65</i>&nbsp;        }</b>
+<i>66</i>&nbsp;
+<b class="fc"><i>67</i>&nbsp;    }</b>
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;    protected void drawString(Graphics2D target, String s, int offset) {
+<b class="fc"><i>70</i>&nbsp;        target.drawString(</b>
+<i>71</i>&nbsp;                s,
+<i>72</i>&nbsp;                15 + leftSpace,
+<b class="fc"><i>73</i>&nbsp;                (Map.getInstance().height * multiplier) + (offset * multiplier) + topSpace</b>
+<i>74</i>&nbsp;        );
+<b class="fc"><i>75</i>&nbsp;    }</b>
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;    public void markReady() {
+<b class="fc"><i>78</i>&nbsp;        if (readyForReRendering) {</b>
+<b class="fc"><i>79</i>&nbsp;            System.out.println(&quot;Rendering must be completed before rendering again&quot;);</b>
+<i>80</i>&nbsp;        }
+<b class="fc"><i>81</i>&nbsp;        this.readyForReRendering = true;</b>
+<b class="fc"><i>82</i>&nbsp;        render();</b>
+<b class="fc"><i>83</i>&nbsp;    }</b>
+<i>84</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-13 18:57</div>
+</div>
+</body>
+</html>
