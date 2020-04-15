@@ -39,37 +39,56 @@
   <td class="name">Map</td>
 <td class="coverageStat">
   <span class="percent">
-    84.2%
+    89.5%
   </span>
   <span class="absValue">
-    (16/ 19)
+    (17/ 19)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    81.9%
+    86%
   </span>
   <span class="absValue">
-    (181/ 221)
+    (190/ 221)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">Map$Direction</td>
+    <td class="name">Map$1</td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    0%
   </span>
   <span class="absValue">
-    (2/ 3)
+    (0/ 1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    14.3%
+    0%
   </span>
   <span class="absValue">
-    (2/ 14)
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Map$Direction</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.9%
+  </span>
+  <span class="absValue">
+    (13/ 14)
   </span>
 </td>
   </tr>
@@ -96,18 +115,18 @@
   <td class="name"><strong>total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    82.6%
+    87.5%
   </span>
   <span class="absValue">
-    (19/ 23)
+    (21/ 24)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    78.5%
+    86.1%
   </span>
   <span class="absValue">
-    (190/ 242)
+    (210/ 244)
   </span>
 </td>
 </tr>
@@ -183,13 +202,13 @@
 <i>64</i>&nbsp;    }
 <i>65</i>&nbsp;
 <i>66</i>&nbsp;    public static int freeNeighbourFields(Position pos) {
-<b class="nc"><i>67</i>&nbsp;        int count = 0;</b>
-<b class="nc"><i>68</i>&nbsp;        for (Direction d : Direction.values()) {</b>
-<b class="nc"><i>69</i>&nbsp;            if (getPositionByDirectionIfMovableTo(pos, d) != null) {</b>
-<b class="nc"><i>70</i>&nbsp;                count++;</b>
+<b class="fc"><i>67</i>&nbsp;        int count = 0;</b>
+<b class="fc"><i>68</i>&nbsp;        for (Direction d : Direction.values()) {</b>
+<b class="fc"><i>69</i>&nbsp;            if (getPositionByDirectionIfMovableTo(pos, d) != null) {</b>
+<b class="fc"><i>70</i>&nbsp;                count++;</b>
 <i>71</i>&nbsp;            }
 <i>72</i>&nbsp;        }
-<b class="nc"><i>73</i>&nbsp;        return count;</b>
+<b class="fc"><i>73</i>&nbsp;        return count;</b>
 <i>74</i>&nbsp;    }
 <i>75</i>&nbsp;
 <i>76</i>&nbsp;    public static Position getPositionByDirectionIfMovableTo(Position prevPos, Direction movingTo) {
@@ -199,18 +218,18 @@
 <i>80</i>&nbsp;        }
 <i>81</i>&nbsp;        try {
 <b class="fc"><i>82</i>&nbsp;            if (movingTo == Direction.NORTH) {</b>
-<b class="nc"><i>83</i>&nbsp;                p = Map.getInstance().getPositionContainer().get(prevPos.getX(), prevPos.getY() - 1);</b>
+<b class="fc"><i>83</i>&nbsp;                p = Map.getInstance().getPositionContainer().get(prevPos.getX(), prevPos.getY() - 1);</b>
 <b class="fc"><i>84</i>&nbsp;            } else if (movingTo == Direction.EAST) {</b>
 <b class="fc"><i>85</i>&nbsp;                p = Map.getInstance().getPositionContainer().get(prevPos.getX() + 1, prevPos.getY());</b>
 <b class="fc"><i>86</i>&nbsp;            } else if (movingTo == Direction.WEST) {</b>
 <b class="fc"><i>87</i>&nbsp;                p = Map.getInstance().getPositionContainer().get(prevPos.getX() - 1, prevPos.getY());</b>
-<b class="nc"><i>88</i>&nbsp;            } else if (movingTo == Direction.SOUTH) {</b>
-<b class="nc"><i>89</i>&nbsp;                p = Map.getInstance().getPositionContainer().get(prevPos.getX(), prevPos.getY() + 1);</b>
+<b class="fc"><i>88</i>&nbsp;            } else if (movingTo == Direction.SOUTH) {</b>
+<b class="fc"><i>89</i>&nbsp;                p = Map.getInstance().getPositionContainer().get(prevPos.getX(), prevPos.getY() + 1);</b>
 <i>90</i>&nbsp;            }
 <b class="fc"><i>91</i>&nbsp;            if (p != null &amp;&amp; p.isMoveableTo()) {</b>
 <b class="fc"><i>92</i>&nbsp;                return p;</b>
 <i>93</i>&nbsp;            } else {
-<b class="nc"><i>94</i>&nbsp;                return null;</b>
+<b class="fc"><i>94</i>&nbsp;                return null;</b>
 <i>95</i>&nbsp;            }
 <b class="fc"><i>96</i>&nbsp;        } catch (IllegalArgumentException ex) {</b>
 <i>97</i>&nbsp;            // Just return null to signalize, that the point doesn&#39;t exist
@@ -540,23 +559,23 @@
 <b class="fc"><i>421</i>&nbsp;        NORTH, WEST, EAST, SOUTH;</b>
 <i>422</i>&nbsp;
 <i>423</i>&nbsp;        public static Direction guessDirection(MapObject mO) {
-<b class="nc"><i>424</i>&nbsp;            Direction[] directions = Direction.values();</b>
-<b class="nc"><i>425</i>&nbsp;            Position guessedPosition = null;</b>
-<b class="nc"><i>426</i>&nbsp;            Direction guessedDirection = null;</b>
+<b class="fc"><i>424</i>&nbsp;            Direction[] directions = Direction.values();</b>
+<b class="fc"><i>425</i>&nbsp;            Position guessedPosition = null;</b>
+<b class="fc"><i>426</i>&nbsp;            Direction guessedDirection = null;</b>
 <i>427</i>&nbsp;
-<b class="nc"><i>428</i>&nbsp;            Helper.shuffle(directions);</b>
+<b class="fc"><i>428</i>&nbsp;            Helper.shuffle(directions);</b>
 <i>429</i>&nbsp;
-<b class="nc"><i>430</i>&nbsp;            for (Direction direction : directions) {</b>
-<b class="nc"><i>431</i>&nbsp;                guessedPosition = Map.getPositionByDirectionIfMovableTo(mO.getPosition(), direction);</b>
-<b class="nc"><i>432</i>&nbsp;                if (guessedPosition != null) {</b>
-<b class="nc"><i>433</i>&nbsp;                    guessedDirection = direction;</b>
-<b class="nc"><i>434</i>&nbsp;                    break;</b>
+<b class="fc"><i>430</i>&nbsp;            for (Direction direction : directions) {</b>
+<b class="fc"><i>431</i>&nbsp;                guessedPosition = Map.getPositionByDirectionIfMovableTo(mO.getPosition(), direction);</b>
+<b class="fc"><i>432</i>&nbsp;                if (guessedPosition != null) {</b>
+<b class="fc"><i>433</i>&nbsp;                    guessedDirection = direction;</b>
+<b class="fc"><i>434</i>&nbsp;                    break;</b>
 <i>435</i>&nbsp;                }
 <i>436</i>&nbsp;            }
-<b class="nc"><i>437</i>&nbsp;            if (guessedPosition == null) {</b>
+<b class="fc"><i>437</i>&nbsp;            if (guessedPosition == null) {</b>
 <b class="nc"><i>438</i>&nbsp;                throw new RuntimeException(&quot;Couldn&#39;t find any free position :(&quot;);</b>
 <i>439</i>&nbsp;            } else {
-<b class="nc"><i>440</i>&nbsp;                return guessedDirection;</b>
+<b class="fc"><i>440</i>&nbsp;                return guessedDirection;</b>
 <i>441</i>&nbsp;            }
 <i>442</i>&nbsp;        }
 <i>443</i>&nbsp;
@@ -568,7 +587,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-04-13 18:57</div>
+    <div style="float:right;">generated on 2020-04-15 10:55</div>
 </div>
 </body>
 </html>

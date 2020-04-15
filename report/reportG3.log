@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.3.30)  6 APR 2020 19:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.3.30)  15 APR 2020 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,22 +372,22 @@ File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 (./reportG3.aux)
 \openout1 = `reportG3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -446,7 +446,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box51
-Package hyperref Info: Link coloring ON on input line 65.
+Package hyperref Info: Link coloring ON on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -459,9 +459,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count287
 )
-LaTeX Info: Redefining \ref on input line 65.
-LaTeX Info: Redefining \pageref on input line 65.
-LaTeX Info: Redefining \nameref on input line 65.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./reportG3.out) (./reportG3.out)
 \@outlinefile=\write3
@@ -472,58 +472,159 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count288
-<figures/UMons_logo.png, id=28, 193.72375pt x 54.2025pt>
+<figures/UMons_logo.png, id=44, 193.72375pt x 54.2025pt>
 File: figures/UMons_logo.png Graphic file (type png)
 <use figures/UMons_logo.png>
-Package pdftex.def Info: figures/UMons_logo.png  used on input line 90.
+Package pdftex.def Info: figures/UMons_logo.png  used on input line 92.
 (pdftex.def)             Requested size: 127.96622pt x 35.80435pt.
-<figures/sciences_logo.png, id=29, 174.6525pt x 81.30376pt>
+<figures/sciences_logo.png, id=45, 174.6525pt x 81.30376pt>
 File: figures/sciences_logo.png Graphic file (type png)
 <use figures/sciences_logo.png>
-Package pdftex.def Info: figures/sciences_logo.png  used on input line 90.
+Package pdftex.def Info: figures/sciences_logo.png  used on input line 92.
 (pdftex.def)             Requested size: 127.96622pt x 59.57082pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 90.
+(Font)              <12> on input line 92.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 90.
+(Font)              <8> on input line 92.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 90.
+(Font)              <6> on input line 92.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/UMons_logo.png> 
 <./figures/sciences_logo.png>]
-(./reportG3.toc)
+(./reportG3.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+)
 \tf@toc=\write4
 \openout4 = `reportG3.toc'.
 
- [2] [3] [4] [5] [6] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
+ [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+<figures/S2-codeMR_dashboard.png, id=81, 1478.52374pt x 795.97375pt>
+File: figures/S2-codeMR_dashboard.png Graphic file (type png)
+<use figures/S2-codeMR_dashboard.png>
+Package pdftex.def Info: figures/S2-codeMR_dashboard.png  used on input line 13
+3.
+(pdftex.def)             Requested size: 511.86491pt x 275.5586pt.
+[4 <./figures/S2-codeMR_dashboard.png>]
+<figures/S2-codeMR_packages.png, id=98, 811.03pt x 574.145pt>
+File: figures/S2-codeMR_packages.png Graphic file (type png)
+<use figures/S2-codeMR_packages.png>
+Package pdftex.def Info: figures/S2-codeMR_packages.png  used on input line 144
+.
+(pdftex.def)             Requested size: 409.49348pt x 289.89275pt.
+ [5 <./figures/S2-codeMR_packages.png>]
+<figures/S2-WorkerProcess_full.png, id=112, 582.13486pt x 294.1389pt>
+File: figures/S2-WorkerProcess_full.png Graphic file (type png)
+<use figures/S2-WorkerProcess_full.png>
+Package pdftex.def Info: figures/S2-WorkerProcess_full.png  used on input line 
+167.
+(pdftex.def)             Requested size: 460.6753pt x 232.7711pt.
+<figures/S2-Ghost_full.png, id=114, 549.61336pt x 299.1978pt>
+File: figures/S2-Ghost_full.png Graphic file (type png)
+<use figures/S2-Ghost_full.png>
+Package pdftex.def Info: figures/S2-Ghost_full.png  used on input line 174.
+(pdftex.def)             Requested size: 419.73297pt x 228.4975pt.
+
+[6 <./figures/S2-WorkerProcess_full.png> <./figures/S2-Ghost_full.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+<figures/S2-named_inheritance.png, id=127, 403.62794pt x 244.63396pt>
+File: figures/S2-named_inheritance.png Graphic file (type png)
+<use figures/S2-named_inheritance.png>
+Package pdftex.def Info: figures/S2-named_inheritance.png  used on input line 1
+95.
+(pdftex.def)             Requested size: 409.49348pt x 248.18697pt.
+<figures/S2-PMD_results.png, id=128, 503.8825pt x 182.6825pt>
+File: figures/S2-PMD_results.png Graphic file (type png)
+<use figures/S2-PMD_results.png>
+Package pdftex.def Info: figures/S2-PMD_results.png  used on input line 204.
+(pdftex.def)             Requested size: 358.30386pt x 129.90338pt.
+[7 <./figures/S2-named_inheritance.png> <./figures/S2-PMD_results.png>]
+<figures/S2-dep_matrix.png, id=140, 280.8894pt x 202.1151pt>
+File: figures/S2-dep_matrix.png Graphic file (type png)
+<use figures/S2-dep_matrix.png>
+Package pdftex.def Info: figures/S2-dep_matrix.png  used on input line 213.
+(pdftex.def)             Requested size: 460.6753pt x 331.49556pt.
+<figures/S2-designite.png, id=143, 724.7075pt x 537.00626pt>
+File: figures/S2-designite.png Graphic file (type png)
+<use figures/S2-designite.png>
+Package pdftex.def Info: figures/S2-designite.png  used on input line 224.
+(pdftex.def)             Requested size: 332.70906pt x 246.54242pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./figures/S2-dep_matrix.png>]
+
+LaTeX Warning: Hyper reference `' on page 9 undefined on input line 235.
+
+
+LaTeX Warning: Reference `' on page 9 undefined on input line 235.
+
+<figures/S2-javadoc.png, id=150, 865.2325pt x 228.855pt>
+File: figures/S2-javadoc.png Graphic file (type png)
+<use figures/S2-javadoc.png>
+Package pdftex.def Info: figures/S2-javadoc.png  used on input line 241.
+(pdftex.def)             Requested size: 332.70906pt x 88.00293pt.
+[9 <./figures/S2-designite.png> <./figures/S2-javadoc.png>]
+<figures/S2-test_coverage.png, id=163, 694.595pt x 273.02pt>
+File: figures/S2-test_coverage.png Graphic file (type png)
+<use figures/S2-test_coverage.png>
+Package pdftex.def Info: figures/S2-test_coverage.png  used on input line 260.
+(pdftex.def)             Requested size: 383.89868pt x 150.903pt.
+ [10 <./figures/S2-test_coverage.png>] [11] [12] [13] [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 277.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 277.
  (./reportG3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 277.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 277.
 Package rerunfilecheck Info: File `reportG3.out' has not changed.
-(rerunfilecheck)             Checksum: 2388B5C7E0DF2DE2DF74343324271842;352.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
+(rerunfilecheck)             Checksum: 1159000D1E0A5A6373D536741B76F506;642.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 277.
  ) 
 Here is how much of TeX's memory you used:
- 9989 strings out of 482868
- 152129 string characters out of 5958262
- 436201 words of memory out of 5000000
- 25088 multiletter control sequences out of 15000+600000
- 536585 words of font info for 38 fonts, out of 8000000 for 9000
+ 10126 strings out of 482868
+ 155031 string characters out of 5958262
+ 438920 words of memory out of 5000000
+ 25193 multiletter control sequences out of 15000+600000
+ 537909 words of font info for 43 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 50i,7n,48p,233b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+ 50i,8n,48p,646b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+ </home/remdec/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
+k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on reportG3.pdf (9 pages, 73406 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb>
+Output written on reportG3.pdf (15 pages, 1177295 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

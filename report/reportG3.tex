@@ -37,9 +37,11 @@
 
 \setcounter{secnumdepth}{4}
 
-\newcommand{\minit}[1]{\noindent{\small\textbf{ \underline{#1}}}\vspace{0.2cm}}
+
+\newcommand{\minit}[1]{\noindent{\small\textbf{ \underline{#1}}}~\\}
 \newcommand{\todo}[1]{\par{\color{red} /---| A faire : #1 |---\textbackslash\\}}
-\newcommand{\wordlink}[2]{\hyperref[#1]{#2~\ref{#1}}}
+\newcommand{\todoIL}[1]{{\color{red}[todo: #1]}}
+\newcommand{\wordlink}[2]{\hyperref[#2]{#1~\ref{#2}}}
 
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
@@ -100,6 +102,166 @@ Faculté des Sciences, Université de Mons}
 \section*{Introduction}
 \newpage
 \section{Quality analysis of the initial versions}
+
+\subsection{System 2 (Rémy)}
+\subsubsection{Generalities}
+
+First of all, this is noticeable that authors provide some documents coupled with the implementation, even if it is not mentioned in the README file. This additional material is available under the \texttt{out/} directory at project roots and comprises :
+\vspace{0.1cm}
+\begin{itemize}
+\item A \texttt{.pdf} file describing shortly the game, the controls and the multiplayer (2 players) mode available
+
+\item A complete class diagram covering the whole implementation
+
+\item A sequence diagram stating the execution flow when Pacman arrives on a cell and so ``eat" what is at this place
+
+\item A graph of the mathematical function used to correlate difficulty with player's progression
+\end{itemize}
+
+We also observe that in this Pacman implementation maps are modelized under \texttt{.tmx} format, that is a popular way to deal with board games\footnote{\url{https://doc.mapeditor.org/en/stable/reference/support-for-tmx-maps/}}. Only one single basic map is provided.\\
+
+The project structure is classic, we have \texttt{main} and \texttt{test} separation under the \texttt{src} directory, each containing packaged sources. The building system provided with the implementation is hold by Gradle. So a switch to Maven will be required to comply with directives.
+
+
+\subsubsection{Static Analysis}
+
+\paragraph{Code metrics (CodeMR)}
+
+CodeMR allows to get an overall idea of the actual health of the system considering several metrics. The dashboard illustrated by \wordlink{Figure}{fig:S2_codeMR_dashboard} informs this software is doing quite good.
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{S2-codeMR_dashboard}
+\caption{CodeMR dashboard summarizing health of system 2}
+\label{fig:S2_codeMR_dashboard}
+\end{figure}
+
+\newpage
+
+The \wordlink{Figure}{fig:S2_codeMR_packages} illustrates also the C3 metric but coupled with detailed packages view. We notice authors apparently tried to follow some Model-View-Controller pattern to design their application. The C3 metric is defined as the maximum between 3 other well representative metrics : \textit{Coupling}, \textit{Cohesion} and \textit{Complexity}. These are defined in the codeMR documentation\footnote{\url{https://www.codemr.co.uk/documents}}. We notice that, following the dashboard overview, two classes are impacting the software quality from the point of view of C3 metric.
+\vspace{0.2cm}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{S2-codeMR_packages}
+\caption{C3 Metric by package for system 2}
+\label{fig:S2_codeMR_packages}
+\end{figure}
+
+The details of the measurements on the two more problematic classes are given by \wordlink{Figure}{fig:S2_workerProcess} and \wordlink{Figure}{fig:S2_ghost}, for respectively \textit{event.WorkerProcess} and \textit{model.Ghost}. For both, two metrics are considered as high value, the meaning described by CodeMR is
+\begin{itemize}
+\item LTCC : The Lack of Tight Class Cohesion metric measures the lack cohesion between the public methods of a class. That is the relative number of directly connected public methods in the class. Classes having a high lack of cohesion indicate errors in the design.
+\item LCOM : Measure how methods of a class are related to each other. Low cohesion means that the class implements more than one responsibility. A change request by either a bug or a new feature, on one of these responsibilities will result change of that class. Lack of cohesion also influences understandability and implies classes should probably be split into two or more subclasses.
+\end{itemize}
+
+In addition, for \textit{event.WorkerProcess} we have :
+\begin{itemize}
+\item CBO : The number of classes that a class is coupled to. It is calculated by counting other classes whose attributes or methods are used by a class, plus those that use the attributes or methods of the given class.
+\item AFTD : Access to Foreign Data is the number of classes whose attributes are directly or indirectly reachable from the investiggated class. Classes with a high ATFD value rely strongly on data of other classes and that can be the sign of the God Class.
+\end{itemize}
+
+Other codeMR metrics did not revelate relevant problems in the implementation.
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{S2-WorkerProcess_full}
+\caption{\textit{event.WorkerProcess} class main metrics measurements}
+\label{fig:S2_workerProcess}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.82\linewidth]{S2-Ghost_full}
+\caption{\textit{model.Ghost} class main metrics measurements}
+\label{fig:S2_ghost}
+\end{figure}
+  
+\newpage
+
+\paragraph{Dependencies (CodeMR, Intellij analyzer)}
+
+CodeMR allows also to inspect dependency relations between classes coupled with the metrics measured for each. We observe in the \wordlink{Figure}{fig:S2_inheritance} the same structure that in the class diagram. Once again the class \textit{event.WorkerProcess} is displayed as problematic, being too complex and coupled with other classes.\\
+
+We use the standard built-in tool of IntellIJ IDEA to instantiate the dependency matrix, illustrated by \wordlink{Figure}{fig:S2_dep_matrix}. We clearly see reading 8th column that \textit{event.WorkerProcess} depends on a lot of other classes from package \textit{model}. This is also the case for \textit{model.Map} that presents a lot of cyclic dependencies (red marked).
+
+\paragraph{Compliance \& bad smells (PMD, Designite)}
+
+PMD is a statical analyzer that checks for problems of several natures in the code. It detected more than 1500 violations in the system 2, related to various topics (see \wordlink{Figure}{fig:S2_PMD}).
+
+\vspace{0.3cm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{S2-named_inheritance}
+\caption{Inheritance relations between classes in system 2}
+\label{fig:S2_inheritance}
+\end{figure}
+
+\vspace{0.4cm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{S2-PMD_results}
+\caption{Violations found by PMD in system 2}
+\label{fig:S2_PMD}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{S2-dep_matrix}
+\caption{Dependency matrix for system 2}
+\label{fig:S2_dep_matrix}
+\end{figure}
+
+\vspace{0.1cm}
+
+Designite is used to detect bad smells, a summary of the analyse is presented by \wordlink{Figure}{fig:S2_designite}. The number of lines of code and classes is higher than the ones returned by CodeMR because the test sources were considered in the analysis.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\linewidth]{S2-designite}
+\caption{Designite in-line use results for system 2}
+\label{fig:S2_designite}
+\end{figure}
+
+
+\newpage
+
+
+\paragraph{Javadoc coverage (MetricsReloaded)}
+
+We use the IntellIJ MetricsReloaded plugin and its metric "Javadoc coverage" to get an overview of how complete is the initial javadoc. As shown by \wordlink{Figure}{}, this is the case.
+
+\vspace{0.2cm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\linewidth]{S2-javadoc}
+\caption{Javadoc coverage for system 2}
+\label{fig:S2_javadoc}
+\end{figure}
+
+\subsubsection{Dynamic Analysis}
+
+\paragraph{Running tests}
+
+Among the already written tests, 3 out of 67 failed at running time. The three tests are in \textit{model.LevelTest} (\textit{testGetLevel}, \textit{testSecondsForCoin} and \textit{testNextLevel}). 
+
+\paragraph{Test coverage (Intellij built-in tool)}
+
+IntellIJ provides run configurations to dynamically analyze what are the parts of source codes covered by launched tests. Considering whole test packages, summary of the results are given by \wordlink{Figure}{fig:S2_test_coverage}. We observe the implementation benefits of a good test coverage, the most laking part is package \textit{view} but it makes sense by its nature.
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{S2-test_coverage}
+\caption{Test coverage for system 2}
+\label{fig:S2_test_coverage}
+\end{figure}
+
 \newpage
 \section{Quality improvement}
 \newpage

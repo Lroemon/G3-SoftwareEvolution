@@ -93,6 +93,25 @@
 </td>
   </tr>
   <tr>
+    <td class="name">MainGui$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+  </tr>
+  <tr>
     <td class="name">MainGui$GamePanel</td>
 <td class="coverageStat">
   <span class="percent">
@@ -115,18 +134,18 @@
   <td class="name"><strong>total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    81.2%
+    72.2%
   </span>
   <span class="absValue">
-    (13/ 16)
+    (13/ 18)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    79.5%
+    74.3%
   </span>
   <span class="absValue">
-    (101/ 127)
+    (101/ 136)
   </span>
 </td>
 </tr>
@@ -338,14 +357,14 @@
 <i>200</i>&nbsp;
 <i>201</i>&nbsp;            @Override
 <i>202</i>&nbsp;            public void actionPerformed(ActionEvent e) {
-<i>203</i>&nbsp;                getContentPane().removeAll();
-<i>204</i>&nbsp;                getContentPane().add(pnlPreGame);
-<i>205</i>&nbsp;                btnPause.removeActionListener(this);
-<i>206</i>&nbsp;                btnPause.addActionListener(toggleGameStateListener);
-<i>207</i>&nbsp;                btnPlaySingleplayer.setText(&quot;Singleplayer&quot;);
-<i>208</i>&nbsp;                dispose();
-<i>209</i>&nbsp;                MainController.reset();
-<i>210</i>&nbsp;                repaint();
+<b class="nc"><i>203</i>&nbsp;                getContentPane().removeAll();</b>
+<b class="nc"><i>204</i>&nbsp;                getContentPane().add(pnlPreGame);</b>
+<b class="nc"><i>205</i>&nbsp;                btnPause.removeActionListener(this);</b>
+<b class="nc"><i>206</i>&nbsp;                btnPause.addActionListener(toggleGameStateListener);</b>
+<b class="nc"><i>207</i>&nbsp;                btnPlaySingleplayer.setText(&quot;Singleplayer&quot;);</b>
+<b class="nc"><i>208</i>&nbsp;                dispose();</b>
+<b class="nc"><i>209</i>&nbsp;                MainController.reset();</b>
+<b class="nc"><i>210</i>&nbsp;                repaint();</b>
 <i>211</i>&nbsp;            }
 <i>212</i>&nbsp;        });
 <b class="nc"><i>213</i>&nbsp;    }</b>
@@ -415,7 +434,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-04-13 18:57</div>
+    <div style="float:right;">generated on 2020-04-15 10:55</div>
 </div>
 </body>
 </html>
