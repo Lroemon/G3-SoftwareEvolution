@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>544</x>
+      <y>88</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Iterable&lt;E&gt;
+--
+(not detailed
+java built-in)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>664</x>
+      <y>136</y>
+      <w>144</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Container&lt;E&gt;
+--
+get(i: int): E
+getAll(): Vector&lt;E&gt; 
+remove(E el): void
+removeAll(): void
+contains(E o): boolean
+size(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>312</y>
+      <w>192</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ObjectContainer
+&lt;E extends MapObject&gt;
+--
+ -elmts: Vector &lt;E&gt; 
+--
+...
+ +contains(Object o): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>440</y>
+      <w>192</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>LimitedObjectContainer
+&lt;E extends MapObject&gt;
+--
+ -max: int 
+--
+...
+ +getMax(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>360</y>
+      <w>144</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>PointContainer
+&lt; E = Point &gt;
+--
+--
+ +removeAll(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>312</y>
+      <w>352</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PositionContainer
+&lt; E=Position &gt;
+--
+ -positions: ConcurrentHashMap&lt;String, Position&gt; 
+ -width: int
+ -height: int
+--
+...
+ +get(x: int, y: int): Position
+ +getRange(startPos: Position,
+                    endPos: Position): PositionContainer
+ -generateKey(pos: Position): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>96</y>
+      <w>176</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0;200.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>144</y>
+      <w>296</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>350.0;10.0;250.0;10.0;250.0;120.0;10.0;120.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>144</y>
+      <w>160</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0;180.0;170.0;20.0;170.0;20.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>384</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>552</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>_ghostContainer_
+&lt; E=Ghost &gt;
+--
+max: int="4"
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>552</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>_pacmanContainer_
+&lt; E=Pacman &gt;
+--
+max: int="2"
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>552</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>_coinContainer_
+&lt; E=Coin &gt;
+--
+max: int="4"
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>552</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>_mapObjectsContainer_
+&lt; E=MapObject &gt;
+--
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>552</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>_pointContainer_
+--
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>320</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0;210.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>552</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>_positionContainer_
+--
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>232</x>
+      <y>456</y>
+      <w>112</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>472</y>
+      <w>272</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;40.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>488</y>
+      <w>112</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;40.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>512</y>
+      <w>96</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>384</y>
+      <w>80</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;50.0;80.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>416</y>
+      <w>120</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;170.0</additional_attributes>
+  </element>
+</diagram>
