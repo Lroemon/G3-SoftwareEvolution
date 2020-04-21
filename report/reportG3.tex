@@ -102,6 +102,7 @@ Faculté des Sciences, Université de Mons}
 \section*{Introduction}
 \newpage
 \section{Quality analysis of the initial versions}
+\label{quality_analysis}
 
 \subsection{System 2 (Rémy)}
 \subsubsection{Generalities}
@@ -264,6 +265,52 @@ IntellIJ provides run configurations to dynamically analyze what are the parts o
 
 \newpage
 \section{Quality improvement}
+
+\subsection{System 2 (Rémy)}
+
+We employ the following methodology to improve the system in its current state :
+\begin{enumerate}
+\item Reviewing the whole code and correct problems of form. It allows to acquire a global overview of the implementation to lead next steps and improve code quality on a per-class basis. These refractorings comprise, among others :
+\begin{itemize}
+\item completing the Javadoc
+\item getting rid of forgot/useless artifacts
+\item detecting and correcting code smells
+\end{itemize}
+The main tool used during this step will be the IDE (IntellIJ) and plugins associated with like Designite, which allow on-the-fly analysis and pointing out problems in the code itself.
+
+
+\item Reviewing the system structure and correct structural design problems. From the acquired global overview, it is possible to have an idea of drawbacks implied by the system design. The refractoring will occurr at a class-to-class relations level, and will then impact package structure level. Some tools and metrics, for example from CodeMR, can be used to leas this step : a class reported too long may be splitted into more than 1 class, inheritance should be used better, etc.
+
+\item If some tests are not passing, find the reason and correct them.
+
+\item Complete the tests based on test coverage reports generated (from IntellIJ).
+
+\item Reuse all the same tools than in \wordlink{Section}{quality_analysis} to generate new reports and observe how quality variated.
+ 
+\end{enumerate}
+\vspace{0.2cm}
+Of course, after each of these steps, the current yet written tests must be launched to control the consistence of the implementation.
+
+\subsubsection{Step 1}
+
+We read through the whole code and corrected what had to be in a first time. Some smells are straightforward, like avoiding Magic Numbers detected by Designite. The help of IntellIJ is precious to get rid of some deprecated/forgot code artifacts the authors left. Some problems reported by Designite are not regarding the actual usage and left as-is.
+
+\subsubsection{Step 2}
+
+It was figured out the current implementation presents some drawbacks. It is mainly related to code duplication for already written objects for \texttt{Container} purposes (can be found in provided class diagram). The fact is that authors wanted to write an overlayer to describe different collections of other objects in the implementation (\texttt{Coin} (= pills), \texttt{Point}, etc.). But they wrote a specific class for every type of object to contain, albeit implementing the common \texttt{Container} interface, this design is very poor and ineleguant, leading to code duplication and increased number of classes. Keeping in mind what were each class written for, we redisigned this part of the implementation in a better way. It also brought the occasion to cluster \texttt{Container} class concerned in a new package to improve the project structure readability.\\
+
+The resulting structure is depicted by \wordlink{Figure}{fig:S2_containers}. We now consider to pass through a \texttt{Containers} class to construct any \texttt{Container} needed in the rest of the implementation. Its methods instantiate the right container with adapted type from generic classes. These instances are shown in orange in the \wordlink{Figure}{fig:S2_containers}. A \texttt{PositionContainer} is a special container to hold coordinates, so we dont use an index but form a key from the couple ($x$, $y$).The method \texttt{getRange(..)} allow to get a subset of contained positions, considering a rectangle selection formed from two positions. For some object types (\texttt{Point}), an overload is necessary to comply with the rest of the implementation. Anyway, this is somehow masked because all containers instances are retrieved from the class \texttt{Containers} mentioned above, and not represented in the figure.
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{S2-classdiagram_containers}
+\caption{New class structure for \texttt{Container}s part of the implementation}
+\label{fig:S2_containers}
+\end{figure}
+
+
 \newpage
 \section{Adding basic functionalities}
 \newpage
