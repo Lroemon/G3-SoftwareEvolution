@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.3.30)  21 APR 2020 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.3.30)  25 APR 2020 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,12 +472,12 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count288
-<figures/UMons_logo.png, id=56, 193.72375pt x 54.2025pt>
+<figures/UMons_logo.png, id=68, 193.72375pt x 54.2025pt>
 File: figures/UMons_logo.png Graphic file (type png)
 <use figures/UMons_logo.png>
 Package pdftex.def Info: figures/UMons_logo.png  used on input line 92.
 (pdftex.def)             Requested size: 127.96622pt x 35.80435pt.
-<figures/sciences_logo.png, id=57, 174.6525pt x 81.30376pt>
+<figures/sciences_logo.png, id=69, 174.6525pt x 81.30376pt>
 File: figures/sciences_logo.png Graphic file (type png)
 <use figures/sciences_logo.png>
 Package pdftex.def Info: figures/sciences_logo.png  used on input line 92.
@@ -506,27 +506,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-<figures/S2-codeMR_dashboard.png, id=96, 1478.52374pt x 795.97375pt>
+<figures/S2-codeMR_dashboard.png, id=111, 1478.52374pt x 795.97375pt>
 File: figures/S2-codeMR_dashboard.png Graphic file (type png)
 <use figures/S2-codeMR_dashboard.png>
 Package pdftex.def Info: figures/S2-codeMR_dashboard.png  used on input line 13
 4.
 (pdftex.def)             Requested size: 511.86491pt x 275.5586pt.
 [4 <./figures/S2-codeMR_dashboard.png>]
-<figures/S2-codeMR_packages.png, id=113, 811.03pt x 574.145pt>
+<figures/S2-codeMR_packages.png, id=128, 811.03pt x 574.145pt>
 File: figures/S2-codeMR_packages.png Graphic file (type png)
 <use figures/S2-codeMR_packages.png>
 Package pdftex.def Info: figures/S2-codeMR_packages.png  used on input line 145
 .
 (pdftex.def)             Requested size: 409.49348pt x 289.89275pt.
  [5 <./figures/S2-codeMR_packages.png>]
-<figures/S2-WorkerProcess_full.png, id=127, 582.13486pt x 294.1389pt>
+<figures/S2-WorkerProcess_full.png, id=142, 582.13486pt x 294.1389pt>
 File: figures/S2-WorkerProcess_full.png Graphic file (type png)
 <use figures/S2-WorkerProcess_full.png>
 Package pdftex.def Info: figures/S2-WorkerProcess_full.png  used on input line 
 168.
 (pdftex.def)             Requested size: 460.6753pt x 232.7711pt.
-<figures/S2-Ghost_full.png, id=129, 549.61336pt x 299.1978pt>
+<figures/S2-Ghost_full.png, id=144, 549.61336pt x 299.1978pt>
 File: figures/S2-Ghost_full.png Graphic file (type png)
 <use figures/S2-Ghost_full.png>
 Package pdftex.def Info: figures/S2-Ghost_full.png  used on input line 175.
@@ -537,24 +537,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-<figures/S2-named_inheritance.png, id=142, 403.62794pt x 244.63396pt>
+<figures/S2-named_inheritance.png, id=157, 403.62794pt x 244.63396pt>
 File: figures/S2-named_inheritance.png Graphic file (type png)
 <use figures/S2-named_inheritance.png>
 Package pdftex.def Info: figures/S2-named_inheritance.png  used on input line 1
 96.
 (pdftex.def)             Requested size: 409.49348pt x 248.18697pt.
-<figures/S2-PMD_results.png, id=143, 503.8825pt x 182.6825pt>
+<figures/S2-PMD_results.png, id=158, 503.8825pt x 182.6825pt>
 File: figures/S2-PMD_results.png Graphic file (type png)
 <use figures/S2-PMD_results.png>
 Package pdftex.def Info: figures/S2-PMD_results.png  used on input line 205.
 (pdftex.def)             Requested size: 358.30386pt x 129.90338pt.
 [7 <./figures/S2-named_inheritance.png> <./figures/S2-PMD_results.png>]
-<figures/S2-dep_matrix.png, id=155, 280.8894pt x 202.1151pt>
+<figures/S2-dep_matrix.png, id=171, 280.8894pt x 202.1151pt>
 File: figures/S2-dep_matrix.png Graphic file (type png)
 <use figures/S2-dep_matrix.png>
 Package pdftex.def Info: figures/S2-dep_matrix.png  used on input line 214.
 (pdftex.def)             Requested size: 460.6753pt x 331.49556pt.
-<figures/S2-designite.png, id=158, 724.7075pt x 537.00626pt>
+<figures/S2-designite.png, id=174, 724.7075pt x 537.00626pt>
 File: figures/S2-designite.png Graphic file (type png)
 <use figures/S2-designite.png>
 Package pdftex.def Info: figures/S2-designite.png  used on input line 225.
@@ -570,53 +570,67 @@ LaTeX Warning: Hyper reference `' on page 9 undefined on input line 236.
 
 LaTeX Warning: Reference `' on page 9 undefined on input line 236.
 
-<figures/S2-javadoc.png, id=166, 865.2325pt x 228.855pt>
+<figures/S2-javadoc.png, id=181, 865.2325pt x 228.855pt>
 File: figures/S2-javadoc.png Graphic file (type png)
 <use figures/S2-javadoc.png>
 Package pdftex.def Info: figures/S2-javadoc.png  used on input line 242.
 (pdftex.def)             Requested size: 332.70906pt x 88.00293pt.
 [9 <./figures/S2-designite.png> <./figures/S2-javadoc.png>]
-<figures/S2-test_coverage.png, id=178, 694.595pt x 273.02pt>
+<figures/S2-test_coverage.png, id=193, 694.595pt x 273.02pt>
 File: figures/S2-test_coverage.png Graphic file (type png)
 <use figures/S2-test_coverage.png>
 Package pdftex.def Info: figures/S2-test_coverage.png  used on input line 261.
 (pdftex.def)             Requested size: 383.89868pt x 150.903pt.
  [10 <./figures/S2-test_coverage.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 [11]
-<figures/S2-classdiagram_containers.png, id=200, 1264.725pt x 682.55pt>
+<figures/S2-classdiagram_containers.png, id=212, 1264.725pt x 682.55pt>
 File: figures/S2-classdiagram_containers.png Graphic file (type png)
 <use figures/S2-classdiagram_containers.png>
 Package pdftex.def Info: figures/S2-classdiagram_containers.png  used on input 
-line 308.
+line 306.
 (pdftex.def)             Requested size: 511.86491pt x 276.24377pt.
- [12 <./figures/S2-classdiagram_containers.png (PNG copy)>] [13] [14]
-[15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+[12 <./figures/S2-classdiagram_containers.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
+
+ []
+
+[13] [14] [15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 355.
  [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 355.
  (./reportG3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 355.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 355.
 Package rerunfilecheck Info: File `reportG3.out' has not changed.
-(rerunfilecheck)             Checksum: 8AC2778DE3CDD75DBD5F47F3493174EA;844.
+(rerunfilecheck)             Checksum: BA2C46EFDDD0A567B72AA8CE4BA3305D;1034.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 324.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 355.
  ) 
 Here is how much of TeX's memory you used:
- 10148 strings out of 482868
- 155493 string characters out of 5958262
- 442081 words of memory out of 5000000
- 25205 multiletter control sequences out of 15000+600000
+ 10153 strings out of 482868
+ 155597 string characters out of 5958262
+ 441081 words of memory out of 5000000
+ 25208 multiletter control sequences out of 15000+600000
  537909 words of font info for 43 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 50i,8n,48p,970b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,8n,48p,1163b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -635,10 +649,10 @@ blic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t8.pfb>
-Output written on reportG3.pdf (16 pages, 1252171 bytes).
+Output written on reportG3.pdf (16 pages, 1261008 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 170 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 

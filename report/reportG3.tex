@@ -284,8 +284,6 @@ The main tool used during this step will be the IDE (IntellIJ) and plugins assoc
 \item If some tests are not passing, find the reason and correct them.
 
 \item Complete the tests based on test coverage reports generated (from IntellIJ).
-
-\item Reuse all the same tools than in \wordlink{Section}{quality_analysis} to generate new reports and observe how quality variated.
  
 \end{enumerate}
 \vspace{0.2cm}
@@ -293,13 +291,13 @@ Of course, after each of these steps, the current yet written tests must be laun
 
 \subsubsection{Step 1}
 
-We read through the whole code and corrected what had to be in a first time. Some smells are straightforward, like avoiding Magic Numbers detected by Designite. The help of IntellIJ is precious to get rid of some deprecated/forgot code artifacts the authors left. Some problems reported by Designite are not regarding the actual usage and left as-is.
+\indent\par We read through the whole code and corrected what had to be in a first time. Some smells are straightforward, like avoiding Magic Numbers detected by Designite. The help of IntellIJ is precious to get rid of some deprecated/forgot code artifacts the authors left. Some problems reported by Designite are not regarding the actual usage and left as-is.
 
 \subsubsection{Step 2}
 
-It was figured out the current implementation presents some drawbacks. It is mainly related to code duplication for already written objects for \texttt{Container} purposes (can be found in provided class diagram). The fact is that authors wanted to write an overlayer to describe different collections of other objects in the implementation (\texttt{Coin} (= pills), \texttt{Point}, etc.). But they wrote a specific class for every type of object to contain, albeit implementing the common \texttt{Container} interface, this design is very poor and ineleguant, leading to code duplication and increased number of classes. Keeping in mind what were each class written for, we redisigned this part of the implementation in a better way. It also brought the occasion to cluster \texttt{Container} class concerned in a new package to improve the project structure readability.\\
+\indent\par It was figured out the current implementation presents some drawbacks. It is mainly related to code duplication for already written objects for \texttt{Container} purposes (can be found in provided class diagram). The fact is that authors wanted to write an overlayer to describe different collections of other objects in the implementation (\texttt{Coin} (= pills), \texttt{Point}, etc.). But they wrote a specific class for every type of object to contain, albeit implementing the common \texttt{Container} interface, this design is very poor and ineleguant, leading to code duplication and increased number of classes. Keeping in mind what were each class written for, we redisigned this part of the implementation in a better way. It also brought the occasion to cluster \texttt{Container} class concerned in a new package to improve the project structure readability.\\
 
-The resulting structure is depicted by \wordlink{Figure}{fig:S2_containers}. We now consider to pass through a \texttt{Containers} class to construct any \texttt{Container} needed in the rest of the implementation. Its methods instantiate the right container with adapted type from generic classes. These instances are shown in orange in the \wordlink{Figure}{fig:S2_containers}. A \texttt{PositionContainer} is a special container to hold coordinates, so we dont use an index but form a key from the couple ($x$, $y$).The method \texttt{getRange(..)} allow to get a subset of contained positions, considering a rectangle selection formed from two positions. For some object types (\texttt{Point}), an overload is necessary to comply with the rest of the implementation. Anyway, this is somehow masked because all containers instances are retrieved from the class \texttt{Containers} mentioned above, and not represented in the figure.
+The resulting structure is depicted by \wordlink{Figure}{fig:S2_containers}. We now consider to pass through a \texttt{Containers} class to construct any \texttt{Container} needed in the rest of the implementation. Its static methods instantiate the right container with adapted type of content from generic classes. These instances are shown in orange in the \wordlink{Figure}{fig:S2_containers}. The restricted typing \texttt{E extends MapObject} allows getting element(s) considering a \texttt{Position} object. A \texttt{PositionContainer} is a specialized container to hold coordinates (already present in original code), so we dont use an index but form a key from the couple ($x$, $y$). The method \texttt{getRange(..)} allows to get a subset of contained positions, considering a rectangle selection formed from two positions given in parameters. For some object types (\texttt{Point}), an overload is necessary to comply with the rest of the implementation. Anyway, this is somehow masked because all containers instances are retrieved from the class \texttt{Containers} mentioned above,  not represented in the figure.
 
 \newpage
 
@@ -311,8 +309,41 @@ The resulting structure is depicted by \wordlink{Figure}{fig:S2_containers}. We 
 \end{figure}
 
 
+An other problem is related to the \texttt{Map} class. We observe the Map itself and the objects that will represent it in the application are instantiated in raw. Coordinates for each element are given in the code itself, that is a bad practice. However, due to the lack of time and considering the picked extension doesn't relate to maps, a trade-off is taken. A new class \texttt{MapPlacer} is written to hold the placement of \texttt{MapObjects} on the declared possible \texttt{Positions} of the unique considered map. It cleans up the code of the original class \texttt{Map} that should only hold dynamic operations such as reinitializing the content of the map when the player passes a level.\\
+
+Concerning package structure, some changements were also needed because the \texttt{model} package had no sub-level (grouping almost 30 classes). We added a subpackage \texttt{model.container} that holds all the hierarchy depicted above and another \texttt{model.mapobject} to group all classes standing for the actors/components of the game (\texttt{Wall}, \texttt{Pacman}, \texttt{Coin}, etc.).
+
+\subsubsection{Step 3}
+
+\indent Some already written tests were not passing, or passing but throwing an exception. That was mainly due to the management of multithreading and game reseting not properly. Also, the usage of \texttt{static} elements lead to inconsistencies. Leveraging some adjustements in the source code, we managed to get the system more consistent and the tests passing in a determenistic behaviour.
+
+\subsubsection{Step 4}
+
+\indent \par The provided existing tests are numerous but not relevant for some. Firstly, there are empty tests, whose only signature is written. They were filled in the right way to evaluate what they're expected to. Some others focus only on get/accessors and methods that are even never used in the rest of the implementation. So, tests oriented to behavior evaluation are mainly missing. We added some for \texttt{Map}, \texttt{Ghost}, \texttt{Pacman}, etc. They aim to ensure the game is running as expected. More diverse additions were done all over to improving testing quality.\\
+
+As some new classes have been written to improve the system quality, the associated tests were also written. We have \texttt{PositionContainerTest} and \texttt{TimerTest} to evaluate the new implementation parts described above.
+
 \newpage
 \section{Adding basic functionalities}
+
+\subsection{System 2}
+
+The following functionnalities were pointed out as missing in this system :
+
+\begin{itemize}
+\item The last two pills eaten in a Level must give an invicibility of 5 seconds instead of 7 seconds
+\item A ghost must disappear when munched and respawn in the ghost base after 5 seconds
+\item The ghosts speed must decrease when they're hunted
+\item Consecutive eaten ghosts must give more points (200-400-800-1600)
+\item There is a timer ruling each level (stoped when pacman is hunting)
+\end{itemize}
+
+\vspace{0.2cm}
+
+These functionnalities are somehow straightforward to implement in this system. Of course some unit tests are written to verify the new behaviors. The only remark would go to the timer. As this system is intended to strengthen the difficulty increasing the ``refresh rate", this rate govern the display frequence. This is why the displayed timer increments step-by-step (we avoid using new display threads to keep consistency and good integration in the actual system). As this timer feature was not present, new classes \texttt{Timer} and \texttt{TimerProcess} were written to be easily integrated with the already existing \texttt{Scheduler} (renamed, previously \texttt{Timer}).\\
+
+It was also necessary to correct some hidden bugs related to the behavior of ghosts. Sometime when eaten, they stay at their position instead of respawning in their base. The code was modified to obtain the right behavior and some tests were added to ensure this. 
+
 \newpage
 \section{Adding new features}
 \newpage
