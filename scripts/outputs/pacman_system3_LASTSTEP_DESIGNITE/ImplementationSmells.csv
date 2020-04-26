@@ -1,0 +1,342 @@
+Project Name,Package Name,Type Name,Method Name,Implementation Smell,Cause of the Smell
+pacman-system3,pacman_infd.Elements,Cherry,draw,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Cherry,draw,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Ghost,Ghost,Long Parameter List,The method has 7 parameters. 
+pacman-system3,pacman_infd.Elements,Ghost,Ghost,Long Parameter List,The method has 6 parameters. 
+pacman-system3,pacman_infd.Elements,Ghost,draw,Long Statement,The length of the statement "g.fillRoundRect((int)getPosition().getX() - 5`(int)getPosition().getY() - 5`getCell().getSize() + 10`getCell().getSize() + 10`10`5);" is 132.
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 5
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 5
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 10
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 10
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 10
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 5
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 12
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 12
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 12
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 12
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 4
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 6
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 6
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 24
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 6
+pacman-system3,pacman_infd.Elements,Ghost,draw,Magic Number,The method contains a magic number: 6
+pacman-system3,pacman_infd.Elements,Ghost,flee,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Elements,Ghost,flee,Magic Number,The method contains a magic number: 0.5f
+pacman-system3,pacman_infd.Elements,Ghost,flee,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Elements,Ghost,dead,Magic Number,The method contains a magic number: 5f
+pacman-system3,pacman_infd.Elements,MovingGameElement,MovingGameElement,Long Parameter List,The method has 5 parameters. 
+pacman-system3,pacman_infd.Elements,MovingGameElement,getNextStepTime,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Elements,Pacman,Pacman,Long Parameter List,The method has 5 parameters. 
+pacman-system3,pacman_infd.Elements,Pacman,setColorAlpha,Long Statement,The length of the statement "this.PACMAN_COLOR=new Color(PACMAN_COLOR.getRed() / 255f`PACMAN_COLOR.getGreen() / 255f`PACMAN_COLOR.getBlue() / 255f`alpha);" is 125.
+pacman-system3,pacman_infd.Elements,Pacman,setColorAlpha,Magic Number,The method contains a magic number: 255f
+pacman-system3,pacman_infd.Elements,Pacman,setColorAlpha,Magic Number,The method contains a magic number: 255f
+pacman-system3,pacman_infd.Elements,Pacman,setColorAlpha,Magic Number,The method contains a magic number: 255f
+pacman-system3,pacman_infd.Elements,Pacman,move,Complex Conditional,The conditional expression this.newDirection != null && cell.getNeighbor(this`newDirection) != null && !cell.getNeighbor(this`newDirection).hasWall() is complex.
+pacman-system3,pacman_infd.Elements,Pacman,move,Long Statement,The length of the statement "if (this.newDirection != null && cell.getNeighbor(this`newDirection) != null && !cell.getNeighbor(this`newDirection).hasWall()) {" is 129.
+pacman-system3,pacman_infd.Elements,Pacman,draw,Long Identifier,The length of the field CELL_SIZE_TO_PACMAN_SIZE_RATIO is 30.
+pacman-system3,pacman_infd.Elements,Pacman,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Pacman,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Pacman,draw,Magic Number,The method contains a magic number: 4
+pacman-system3,pacman_infd.Elements,Pacman,draw,Magic Number,The method contains a magic number: 4
+pacman-system3,pacman_infd.Elements,Pacman,draw,Magic Number,The method contains a magic number: 360
+pacman-system3,pacman_infd.Elements,Pacman,draw,Magic Number,The method contains a magic number: 360
+pacman-system3,pacman_infd.Elements,Pacman,drawOval,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Pacman,drawOval,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Pacman,rotateAroundCenter,Long Statement,The length of the statement "double newX=center.getX() + (point.getX() - center.getX()) * Math.cos(angle) - (point.getY() - center.getY()) * Math.sin(angle);" is 128.
+pacman-system3,pacman_infd.Elements,Pacman,rotateAroundCenter,Long Statement,The length of the statement "double newY=center.getY() + (point.getX() - center.getX()) * Math.sin(angle) + (point.getY() - center.getY()) * Math.cos(angle);" is 128.
+pacman-system3,pacman_infd.Elements,Pacman,rotateAroundCenter,Magic Number,The method contains a magic number: 360
+pacman-system3,pacman_infd.Elements,Pacman,getEndMouthArc,Magic Number,The method contains a magic number: 360
+pacman-system3,pacman_infd.Elements,Pellet,draw,Long Statement,The length of the statement "g.fillOval((int)getPosition().getX() + getCell().getSize() / 2 - 3`(int)getPosition().getY() + getCell().getSize() / 2 - 3`6`6);" is 128.
+pacman-system3,pacman_infd.Elements,Pellet,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Pellet,draw,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd.Elements,Pellet,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Pellet,draw,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd.Elements,Pellet,draw,Magic Number,The method contains a magic number: 6
+pacman-system3,pacman_infd.Elements,Pellet,draw,Magic Number,The method contains a magic number: 6
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 40
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 12
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 4
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 50
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 255
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 40
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 48
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 255
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 4
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 50
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 40
+pacman-system3,pacman_infd.Elements,Portal,draw,Magic Number,The method contains a magic number: 48
+pacman-system3,pacman_infd.Elements,SuperPellet,draw,Long Statement,The length of the statement "g.fillOval((int)getPosition().getX() + getCell().getSize() / 2 - 10`(int)getPosition().getY() + getCell().getSize() / 2 - 10`20`20);" is 132.
+pacman-system3,pacman_infd.Elements,SuperPellet,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,SuperPellet,draw,Magic Number,The method contains a magic number: 10
+pacman-system3,pacman_infd.Elements,SuperPellet,draw,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements,SuperPellet,draw,Magic Number,The method contains a magic number: 10
+pacman-system3,pacman_infd.Elements,SuperPellet,draw,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,SuperPellet,draw,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,draw,Complex Method,Cyclomatic complexity of the method is 11
+pacman-system3,pacman_infd.Elements,Wall,draw,Missing default,The following switch statement is missing a default case: switch (type) {
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 17
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 180
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 11
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 180
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 180
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 11
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 19
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 19
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 180
+pacman-system3,pacman_infd.Elements,Wall,drawLeftDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 31
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 31
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 11
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 31
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 31
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 12
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawRightUpCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 17
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 17
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 32
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 270
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 11
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 11
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 20
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 270
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 17
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 17
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 33
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 33
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 270
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 11
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 11
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 19
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 19
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 270
+pacman-system3,pacman_infd.Elements,Wall,drawRightDownCorner,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX() + 8`(int)getPosition().getY()`(int)getPosition().getX() + 8`(int)getPosition().getY() + cell.getSize());" is 141.
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX() + 16`(int)getPosition().getY()`(int)getPosition().getX() + 16`(int)getPosition().getY() + cell.getSize());" is 143.
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX() + 9`(int)getPosition().getY()`(int)getPosition().getX() + 9`(int)getPosition().getY() + cell.getSize());" is 141.
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX() + 15`(int)getPosition().getY()`(int)getPosition().getX() + 15`(int)getPosition().getY() + cell.getSize());" is 143.
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawVerticalLine,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX()`(int)getPosition().getY() + 8`(int)getPosition().getX() + cell.getSize() - 1`(int)getPosition().getY() + 8);" is 145.
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX()`(int)getPosition().getY() + 16`(int)getPosition().getX() + cell.getSize() - 1`(int)getPosition().getY() + 16);" is 147.
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX()`(int)getPosition().getY() + 9`(int)getPosition().getX() + cell.getSize() - 1`(int)getPosition().getY() + 9);" is 145.
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Long Statement,The length of the statement "g.drawLine((int)getPosition().getX()`(int)getPosition().getY() + 15`(int)getPosition().getX() + cell.getSize() - 1`(int)getPosition().getY() + 15);" is 147.
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 8
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 16
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 9
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements,Wall,drawHorizontalLine,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Elements.ExtensionElements,ATimeBasedElement,ATimeBasedElement,Long Parameter List,The method has 5 parameters. 
+pacman-system3,pacman_infd.Elements.ExtensionElements,GrenadeElement,onCollided,Magic Number,The method contains a magic number: 200
+pacman-system3,pacman_infd.Elements.ExtensionElements,RedBeanElement,RedBeanElement,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Elements.ExtensionElements,RedBeanElement,loadProjectileImages,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Elements.ExtensionElements,RedBeanElement,loadProjectileImages,Magic Number,The method contains a magic number: 2.
+pacman-system3,pacman_infd.Elements.ExtensionElements,RedBeanElement,loadProjectileImages,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Elements.ExtensionElements,RedBeanElement,shoot,Long Statement,The length of the statement "new Projectile(this.shooter.getCell()`super.elementEventListener`this.shooter.getSpeed() + PROJECTILE_SPEED`super.soundManager`shooter.getCurrentDirection());" is 158.
+pacman-system3,pacman_infd.Elements.ExtensionElements,RedBeanElement,Projectile,Long Parameter List,The method has 5 parameters. 
+pacman-system3,pacman_infd.Elements.ExtensionElements,Projectile,Projectile,Long Parameter List,The method has 5 parameters. 
+pacman-system3,pacman_infd.Elements.ExtensionElements,TomatoElement,onCollided,Magic Number,The method contains a magic number: 0.5f
+pacman-system3,pacman_infd.Game,Cell,nextCells,Complex Conditional,The conditional expression nextCell != null && (nextCell.staticElement == null || nextCell.staticElement.getClass() != Wall.class) && !except.contains(nextCell) is complex.
+pacman-system3,pacman_infd.Game,Cell,nextCells,Long Statement,The length of the statement "if (nextCell != null && (nextCell.staticElement == null || nextCell.staticElement.getClass() != Wall.class) && !except.contains(nextCell)) {" is 140.
+pacman-system3,pacman_infd.Game,EventHandler,checkCollisions,Complex Conditional,The conditional expression element instanceof Eatable && p.isVisible() && element.isVisible() is complex.
+pacman-system3,pacman_infd.Game,EventHandler,killPacman,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Game,EventHandler,enterSuperMode,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Game,EventHandler,enterSuperMode,Magic Number,The method contains a magic number: 7
+pacman-system3,pacman_infd.Game,EventHandler,enterSuperMode,Magic Number,The method contains a magic number: 5
+pacman-system3,pacman_infd.Game,GameCollisionsMap,getSubMap,Long Statement,The length of the statement "Map<Class<? extends GameElement>`ICollisionAction<? extends GameElement`? extends GameElement>> map=this.collisions.getOrDefault(c`null);" is 137.
+pacman-system3,pacman_infd.Game,GameCollisionsMap,getCollisionAction,Long Statement,The length of the statement "Map<Class<? extends GameElement>`ICollisionAction<? extends GameElement`? extends GameElement>> map=collisions.getOrDefault(c1`null);" is 133.
+pacman-system3,pacman_infd.Game,GameCollisionsMap,onCollision,Complex Conditional,The conditional expression object1 == object2 || object1 == null || object2 == null is complex.
+pacman-system3,pacman_infd.Game,GameController,levelIsWon,Long Statement,The length of the statement "JOptionPane.showMessageDialog(null`"Well done!\nGet ready for the next level!"`"Level Complete"`JOptionPane.ERROR_MESSAGE);" is 123.
+pacman-system3,pacman_infd.Game,GameController,gameOver,Long Statement,The length of the statement "JOptionPane.showMessageDialog(null`"Game over!\nYour score: " + scorePanel.getScore()`"Game over!"`JOptionPane.ERROR_MESSAGE);" is 126.
+pacman-system3,pacman_infd.Game,GameController,stopTime,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Game,GameWorld,getElementBuilders,Long Method,The method has 114 lines of code.
+pacman-system3,pacman_infd.Game,GameWorld,GameWorld,Long Parameter List,The method has 5 parameters. 
+pacman-system3,pacman_infd.Game,GameWorld,placeCherryOnRandomEmptyCell,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Game,GameWorld,placeCherryOnRandomEmptyCell,Magic Number,The method contains a magic number: 100
+pacman-system3,pacman_infd.Game,GameWorld,placeCherryOnRandomEmptyCell,Magic Number,The method contains a magic number: 90
+pacman-system3,pacman_infd.Game,GameWorld,spawnPortal,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 40
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 275
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 35
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 15
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 50
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 25
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 150
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 25
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 520
+pacman-system3,pacman_infd.Game,ScorePanel,paintComponent,Magic Number,The method contains a magic number: 25
+pacman-system3,pacman_infd.Game,StopWatch,getElapsedTimeMinutesSeconds,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Game,StopWatch,getElapsedTimeMinutesSeconds,Magic Number,The method contains a magic number: 60
+pacman-system3,pacman_infd.Game,StopWatch,getElapsedTimeMinutesSeconds,Magic Number,The method contains a magic number: 1000
+pacman-system3,pacman_infd.Game,StopWatch,getElapsedTimeMinutesSeconds,Magic Number,The method contains a magic number: 60
+pacman-system3,pacman_infd.Game,StopWatch,getElapsedTimeMinutesSeconds,Magic Number,The method contains a magic number: 60
+pacman-system3,pacman_infd,ElementsTest,testEatingPelletAndCherry,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ElementsTest,testEatingPelletAndCherry,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ElementsTest,testEatingPelletAndCherry,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ElementsTest,testEatingPelletAndCherry,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,ElementsTest,testEatingPelletAndCherry,Magic Number,The method contains a magic number: 4
+pacman-system3,pacman_infd,ElementsTest,testEatingSuperPellet,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ElementsTest,testEatingSuperPellet,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTrapElement,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTrapElement,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTeleporter,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTeleporter,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,ExtentionTest,testTeleporter,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,ExtentionTest,testTeleporter,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTeleporter,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,ExtentionTest,testTeleporter,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,ExtentionTest,testBridge,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testGrenade,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testGrenade,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testGrenade,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testPepper,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTomato,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTomato,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testTomato,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testRedBean,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testRedBean,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testRedBean,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testPotato,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testPotato,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testPotato,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,ExtentionTest,testFishElement,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval1,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval1,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval2,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval2,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval3,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval3,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval3,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval4,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval4,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval4,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval4,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval4,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval4,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval4,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval5,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval5,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval5,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval5,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval6,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval6,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval6,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval6,Magic Number,The method contains a magic number: 3
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval6,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval6,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval6,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval7,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval7,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval8,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval8,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval8,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval9,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval9,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval9,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval9,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval9,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval9,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval10,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval10,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval10,Magic Number,The method contains a magic number: 26
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval10,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval10,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval10,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,GamWorldTest,testSpawnPortalGeval10,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 100
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 100
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 100
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 100
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 100
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestGeval1,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Long Statement,The length of the statement "assert (strategy.giveNextCell(gameWorld.getCellMap()[1][0]) == gameWorld.getCellMap()[1][0].getNeighbor(Direction.DOWN));" is 121.
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Long Statement,The length of the statement "assert (fleeStrategy.giveNextCell(gameWorld.getCellMap()[2][0]) == gameWorld.getCellMap()[2][0].getNeighbor(Direction.UP));" is 123.
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Long Statement,The length of the statement "assert (chasePacmanStrategy.giveNextCell(gameWorld.getCellMap()[2][0]) == gameWorld.getCellMap()[2][0].getNeighbor(Direction.DOWN));" is 132.
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd,PathFinderTest,pathFinderTestDifferentStrategies,Magic Number,The method contains a magic number: 2
+pacman-system3,pacman_infd.Strategies,FleeStrategy,giveNextCell,Complex Conditional,The conditional expression !cell.hasWall() && !cell.equals(towardsPacman) && !cell.equals(previousCell) is complex.
+pacman-system3,pacman_infd.Strategies,PathFinder,addCellChildInQueue,Complex Conditional,The conditional expression !cellChild.hasWall() && !visitedCells.contains(cellChild) && !queue.contains(cellChild) is complex.

@@ -1,0 +1,33 @@
+Searching classpath folders ...
+Parsing the source code ...
+Resolving symbols...
+Computing metrics...
+Detecting code smells...
+Error - License validation unsuccessful. Status code: 406
+Exporting analysis results...
+--Analysis summary--
+	Total LOC analyzed: 3644	Number of packages: 7
+	Number of classes: 58	Number of methods: 405
+-Total architecture smell instances detected-
+	Cyclic dependency: 0	God component: 0
+	Ambiguous interface: 0 	Feature concentration: 2
+	Unstable dependency: 0	Scattered functionality: 4
+	Dense structure: 0
+-Total design smell instances detected-
+	Imperative abstraction: 0	Multifaceted abstraction: 0
+	Unnecessary abstraction: 0	Unutilized abstraction: 1
+	Feature envy: 0	Deficient encapsulation: 2
+	Unexploited encapsulation: 1	Broken modularization: 0
+	Cyclically-dependent modularization: 0	Hub-like modularization: 0
+	Insufficient modularization: 2	Broken hierarchy: 10
+	Cyclic hierarchy: 0	Deep hierarchy: 0
+	Missing hierarchy: 1	Multipath hierarchy: 0
+	Rebellious hierarchy: 1	Wide hierarchy: 0
+-Total implementation smell instances detected-
+	Abstract function call from constructor: 0	Complex conditional: 6
+	Complex method: 1	Empty catch clause: 0
+	Long identifier: 1	Long method: 1
+	Long parameter list: 8	Long statement: 24
+	Magic number: 299	Missing default: 1
+----
+Done.
