@@ -1,0 +1,62 @@
+Project Name,Package Name,Type Name,Method Name,Implementation Smell,Cause of the Smell
+pacman-system1,nl.tudelft.jpacman,Launcher,addSinglePlayerKeys,Long Statement,The length of the statement "builder.addKey(KeyEvent.VK_UP`moveTowardsDirection(Direction.NORTH)).addKey(KeyEvent.VK_DOWN`moveTowardsDirection(Direction.SOUTH)).addKey(KeyEvent.VK_LEFT`moveTowardsDirection(Direction.WEST)).addKey(KeyEvent.VK_RIGHT`moveTowardsDirection(Direction.EAST));" is 257.
+pacman-system1,nl.tudelft.jpacman,Launcher,addSinglePlayerKeysContiniousMovements,Long Statement,The length of the statement "builder.addKey(KeyEvent.VK_UP`moveUntilDirectionChange(Direction.NORTH)).addKey(KeyEvent.VK_DOWN`moveUntilDirectionChange(Direction.SOUTH)).addKey(KeyEvent.VK_LEFT`moveUntilDirectionChange(Direction.WEST)).addKey(KeyEvent.VK_RIGHT`moveUntilDirectionChange(Direction.EAST));" is 273.
+pacman-system1,nl.tudelft.jpacman,LauncherSmokeTest,smokeTest2,Magic Number,The method contains a magic number: 7000
+pacman-system1,nl.tudelft.jpacman,LauncherSmokeTest,smokeTest2,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.board,SpecialPelletTest,stopEffectAfterDurationReset,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.board,SpecialBoxTest,trapSpecialBox,Magic Number,The method contains a magic number: 100L
+pacman-system1,nl.tudelft.jpacman.level,Level,setScaringTimeLeft,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.level,Level,setScaringTimeLeft,Magic Number,The method contains a magic number: 4
+pacman-system1,nl.tudelft.jpacman.level,Level,setScaringTimer,Magic Number,The method contains a magic number: 1000L
+pacman-system1,nl.tudelft.jpacman.level,LevelFactory,createGhost,Missing default,The following switch statement is missing a default case: switch (ghostIndex) {
+pacman-system1,nl.tudelft.jpacman.level,MapParser,getSquareBuilders,Long Method,The method has 158 lines of code.
+pacman-system1,nl.tudelft.jpacman.level,MapParser,AddSquareParameters,Long Parameter List,The method has 6 parameters. 
+pacman-system1,nl.tudelft.jpacman.level,MapParser,MakeGridParameters,Long Parameter List,The method has 6 parameters. 
+pacman-system1,nl.tudelft.jpacman.level,AddSquareParameters,AddSquareParameters,Long Parameter List,The method has 6 parameters. 
+pacman-system1,nl.tudelft.jpacman.level,MakeGridParameters,MakeGridParameters,Long Parameter List,The method has 6 parameters. 
+pacman-system1,nl.tudelft.jpacman.level,Player,setSpeedModifier,Magic Number,The method contains a magic number: 1e-10
+pacman-system1,nl.tudelft.jpacman.level,SpecialUnitySpawner,getBonus,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.level,SpecialUnitySpawner,getBonus,Missing default,The following switch statement is missing a default case: switch (ind) {
+pacman-system1,nl.tudelft.jpacman.level,SpecialUnitySpawner,getPenalty,Missing default,The following switch statement is missing a default case: switch (ind) {
+pacman-system1,nl.tudelft.jpacman.level,SpecialUnitySpawner,placeBox,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.level,LevelTest,setUp,Magic Number,The method contains a magic number: 100L
+pacman-system1,nl.tudelft.jpacman.npc,Ghost,setScared,Magic Number,The method contains a magic number: 0.5f
+pacman-system1,nl.tudelft.jpacman.npc.ghost,Navigation,addNewTargets,Complex Conditional,The conditional expression !assessTargets.visited.contains(target) && (assessTargets.traveller == null || target.isAccessibleTo(assessTargets.traveller)) is complex.
+pacman-system1,nl.tudelft.jpacman.npc.ghost,Navigation,addNewTargets,Long Statement,The length of the statement "if (!assessTargets.visited.contains(target) && (assessTargets.traveller == null || target.isAccessibleTo(assessTargets.traveller))) {" is 133.
+pacman-system1,nl.tudelft.jpacman.npc.ghost,Navigation,AssessTargets,Long Parameter List,The method has 5 parameters. 
+pacman-system1,nl.tudelft.jpacman.npc.ghost,AssessTargets,AssessTargets,Long Parameter List,The method has 5 parameters. 
+pacman-system1,nl.tudelft.jpacman.npc.ghost,NavigationTest,testNoShortestPath,Magic Number,The method contains a magic number: 3
+pacman-system1,nl.tudelft.jpacman.npc.ghost,NavigationTest,testNoTraveller,Magic Number,The method contains a magic number: 3
+pacman-system1,nl.tudelft.jpacman.npc.ghost,NavigationTest,testSimplePath,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.npc.ghost,NavigationTest,testCornerPath,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.npc.ghost,NavigationTest,testCornerPath,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.npc.ghost,NavigationTest,testNearestUnit,Magic Number,The method contains a magic number: 2
+pacman-system1,nl.tudelft.jpacman.sprite,AnimatedSprite,draw,Long Parameter List,The method has 5 parameters. 
+pacman-system1,nl.tudelft.jpacman.sprite,EmptySprite,draw,Long Parameter List,The method has 5 parameters. 
+pacman-system1,nl.tudelft.jpacman.sprite,ImageSprite,draw,Long Parameter List,The method has 5 parameters. 
+pacman-system1,nl.tudelft.jpacman.sprite,ImageSprite,newImage,Long Statement,The length of the statement "GraphicsConfiguration gc=GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();" is 126.
+pacman-system1,nl.tudelft.jpacman.sprite,Sprite,draw,Long Parameter List,The method has 5 parameters. 
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,animationWidth,Magic Number,The method contains a magic number: 4
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,animationWidth,Magic Number,The method contains a magic number: 16
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,animationHeight,Magic Number,The method contains a magic number: 4
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,animationHeight,Magic Number,The method contains a magic number: 64
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitWidth,Magic Number,The method contains a magic number: 10
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitWidth,Magic Number,The method contains a magic number: 11
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitWidth,Magic Number,The method contains a magic number: 12
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitWidth,Magic Number,The method contains a magic number: 13
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitWidth,Magic Number,The method contains a magic number: 12
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitHeight,Magic Number,The method contains a magic number: 10
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitHeight,Magic Number,The method contains a magic number: 11
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitHeight,Magic Number,The method contains a magic number: 12
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitHeight,Magic Number,The method contains a magic number: 13
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitHeight,Magic Number,The method contains a magic number: 13
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitOutOfBounds,Magic Number,The method contains a magic number: 10
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitOutOfBounds,Magic Number,The method contains a magic number: 10
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitOutOfBounds,Magic Number,The method contains a magic number: 64
+pacman-system1,nl.tudelft.jpacman.sprite,SpriteTest,splitOutOfBounds,Magic Number,The method contains a magic number: 10
+pacman-system1,nl.tudelft.jpacman.ui,BoardPanel,render,Long Parameter List,The method has 6 parameters. 
+pacman-system1,nl.tudelft.jpacman.ui,LevelStatsPanel,LevelStatsPanel,Magic Number,The method contains a magic number: 5
+pacman-system1,nl.tudelft.jpacman.ui,LevelStatsPanel,LevelStatsPanel,Magic Number,The method contains a magic number: 5
+pacman-system1,nl.tudelft.jpacman.ui,LevelStatsPanel,actionPerformed,Magic Number,The method contains a magic number: 5
+pacman-system1,nl.tudelft.jpacman.ui,PlayerController,getNextStepTime,Magic Number,The method contains a magic number: 1000L
+pacman-system1,nl.tudelft.jpacman.ui,ScorePanel,ScorePanel,Magic Number,The method contains a magic number: 3

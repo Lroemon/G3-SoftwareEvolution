@@ -12,5 +12,8 @@
 \BOOKMARK [1][-]{section.3}{Adding basic functionalities}{}% 12
 \BOOKMARK [2][-]{subsection.3.1}{System 2}{section.3}% 13
 \BOOKMARK [1][-]{section.4}{Adding new features}{}% 14
-\BOOKMARK [1][-]{section.5}{Quality evolution analysis}{}% 15
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{System 1 \(R\351my\)}{section.4}% 15
+\BOOKMARK [3][-]{subsubsection.4.1.1}{New features discussion}{subsection.4.1}% 16
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Quality analysis}{subsection.4.1}% 17
+\BOOKMARK [1][-]{section.5}{Quality evolution analysis}{}% 18
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 19

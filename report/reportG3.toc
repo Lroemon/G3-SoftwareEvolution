@@ -19,5 +19,8 @@
 \contentsline {section}{\numberline {3}Adding basic functionalities}{13}{section.3}%
 \contentsline {subsection}{\numberline {3.1}System 2}{13}{subsection.3.1}%
 \contentsline {section}{\numberline {4}Adding new features}{14}{section.4}%
-\contentsline {section}{\numberline {5}Quality evolution analysis}{15}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{16}{section.6}%
+\contentsline {subsection}{\numberline {4.1}System 1 (Rémy)}{14}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}New features discussion}{14}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Quality analysis}{15}{subsubsection.4.1.2}%
+\contentsline {section}{\numberline {5}Quality evolution analysis}{18}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{19}{section.6}%
