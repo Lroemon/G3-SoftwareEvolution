@@ -1,0 +1,27 @@
+# Gradle Files #
+build/
+.gradle/
+target/
+
+# Compiled Files #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Backup Files #
+*.bak
+
+# Documentation Files #
+doc/
+
+# Project/IDE Settings #
+.idea/
+.settings/
+.project
+
+# Logging and Debug files #
+*.log
+*.debug
